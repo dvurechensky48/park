@@ -1,0 +1,147 @@
+.circle-main
+{
+	position: relative;
+	display: inline-block;
+	width: 109px;
+	height: 109px;
+	background: none;
+	border-radius: 109px;
+	border:3px solid #fff;
+}
+.circle-main img
+{
+	position: relative;
+	top:10%;
+}
+.circle-main-bg
+{
+	position: relative;
+	display: inline-block;
+	width: 109px;
+	height: 109px;
+	background: #fff;
+	border-radius: 109px;
+	border:3px solid #fff;
+}
+.circle-main-bg img
+{
+	position: relative;
+	top:10%;
+}
+#gal-main .circle-main
+{
+	position: relative;
+	display: inline-block;
+	width: 109px;
+	height: 109px;
+	background: none;
+	border-radius: 109px;
+	border:3px solid #9dc4b5;
+}
+#gal-main .circle-main img
+{
+	position: relative;
+	top:20%;
+}
+#tour
+{
+	background-image: url(../img/tour-bg.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: cover;
+}
+#zan
+{
+	background-image: url(../img/zan.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: cover;
+}
+#gal-main
+{
+	background-image: url(../img/gal-mainbg.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: cover;
+}
+.for-you .name, #zan .name
+{
+	font-weight: 800;
+	font-size:1.1em;
+}
+.slider
+{
+	position: relative;
+	height: 500px;
+	overflow: hidden;
+}
+
+.slider .item:before
+{
+	content: "";
+	display: block;
+	position: absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height: 100%;
+	background: rgba(52, 66, 88, 0.6);
+	z-index: 1;
+}
+.slider .img
+{
+	position: relative;
+}
+.slider .center
+{
+	position: absolute;
+	top:13%;
+	z-index: 2;
+	color:#fff;
+	width: 100%;
+}
+.slider .top
+{
+	position: absolute;
+	top:20px;
+	right:5%;
+	z-index: 2;
+	color:#fff;
+	width: 100%;
+	text-align: right;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 36px;
+	letter-spacing: 1.2px;
+}
+.slider .center .title
+{
+	font-size: 60px;
+	font-weight: 700;
+	line-height: 60px;
+	letter-spacing: 8px;
+	text-align: center;
+}
+.slider .center .desc
+{
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 60px;
+	text-align: center;
+}
+.slider .btn
+{
+	color: #ffffff;
+	display: inline;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 1.4px;
+	padding: 16px 19px;
+	border: 2px solid #fff;
+	transition: 300ms;
+}
+.slider .btn:hover
+{
+	background: #fff;
+	color:#000;
+}
