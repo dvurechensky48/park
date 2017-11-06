@@ -25,5 +25,6 @@ return [
         'Developments' => App\Http\Widgets\Mainpage\Developments::class,
         'News' => App\Http\Widgets\Mainpage\News::class,
         'Employment' => App\Http\Widgets\Mainpage\Employment::class,
+        'Comment' => App\Http\Widgets\Comment::class,
     ],
 ];

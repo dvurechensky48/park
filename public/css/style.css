@@ -681,3 +681,47 @@ end footer
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
+
+/*
+comment_go
+*/
+.comment
+{
+	margin-top: 40px;
+}
+.comments a
+{
+	cursor: pointer;
+}
+.comment_title a.active
+{
+	color:#000 !important;
+
+}
+.comment_title a
+{
+	cursor: pointer;
+}
+.comment_go
+{
+	display: none;
+}
+.comment_go.active
+{
+	display: block;
+}
+.comment_go input.form, .comment_go textarea.form
+{
+	border:0;
+	min-width: 100%;
+	border-bottom: 2px solid #c36a6a;
+	resize: none;
+}
+.comment_go input.form:active, .comment_go textarea.form:active,.comment_go input.form:focus, .comment_go textarea.form:focus
+{
+	box-shadow: 0;
+	outline: 0;
+}
+/*
+end comment_go
+*/

@@ -14,9 +14,10 @@ class CreateOrchidCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('post_id');
-            $table->integer('user_id');
+            $table->string('user_id');
             $table->integer('parent_id');
             $table->text('content');
+            $table->string('name')->nullable();
             $table->boolean('approved')->nullable();
             $table->timestamps();
 

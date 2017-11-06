@@ -45,15 +45,17 @@ class HomeController extends Controller
     }
     public function test(Request $request)
     {
+        
         echo('HELLO');
         echo('<br>');
         $name = $request->input('name');
         echo($name);
         $post = new Comment;
-        $post->post_id = 3;
+        $post->post_id = 4;
         $post->user_id = 1;
         $post->parent_id = 1;
-        $post->content = 'Че за хуйня';
+        $post->content = 'Работает епт 2';
+        $post->name = 'Почетный гость';
         $post->approved = true;
         $post->save();
     }

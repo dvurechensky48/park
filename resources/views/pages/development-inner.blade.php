@@ -80,27 +80,9 @@
                         </div>
                         
                     </div>
-                    <div class="comment margin-top-4">
-                        <h3>Комментарии</h3>
-                        
-                        <div class="comment margin-top-4">
-                            <div class="col-xs-6">Ф.Имя</div>
-                            <div class="col-xs-6 all-right color-ser">Сегодня, 13:01</div>
-                            <div class="clearfix"></div>
-                            <div class="redseparator-small"></div>
-                            <div>Здесь будет текст комментария</div>
-                            <div class="margin-top-2"><a class="color-ser" href="#">Ответить</a></div>
-                        </div>
-
-                        <div class="comment margin-top-4">
-                            <div class="col-xs-6">Ф.Имя</div>
-                            <div class="col-xs-6 all-right color-ser">Сегодня, 13:01</div>
-                            <div class="clearfix"></div>
-                            <div class="redseparator-small"></div>
-                            <div>Здесь будет текст комментария Здесь будет текст комментария Здесь будет текст комментария Здесь будет текст комментария Здесь будет текст комментария будет текст комментария </div>
-                            <div class="margin-top-2"><a class="color-ser" href="#">Ответить</a></div>
-                        </div>
-                    </div>
+                    
+                    @widget('Comment')
+                    
                 </div>
             </div>
         </div>
