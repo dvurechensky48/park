@@ -12,7 +12,8 @@ return [
     */
 
     'single' => [
-        //App\Core\Behaviors\Single\DemoPage::class,
+        App\Core\Behaviors\Single\About::class,
+        App\Core\Behaviors\Single\Information::class,
     ],
 
     /*
@@ -25,7 +26,12 @@ return [
     */
 
     'many' => [
-        //App\Core\Behaviors\Many\DemoPost::class,
+        App\Core\Behaviors\Many\MainSlider::class,
+        App\Core\Behaviors\Many\Developments::class,
+        App\Core\Behaviors\Many\Employment::class,
+        App\Core\Behaviors\Many\Galery::class,
+        App\Core\Behaviors\Many\News::class,
+        App\Core\Behaviors\Many\Typical::class,
     ],
 
     /*
@@ -39,8 +45,7 @@ return [
 
     'menu' => [
         'header'  => 'Top Menu',
-        'sidebar' => 'Sidebar Menu',
-        'footer'  => 'Footer Menu',
+        'mobile' => 'Mobile Menu',
     ],
 
     /*
@@ -104,8 +109,6 @@ return [
     */
     'advertising'  => [
         'top'    => 'Top banner',
-        'side'   => 'Side banner',
-        'footer' => 'Banner cellar',
     ],
 
 
