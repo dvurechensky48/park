@@ -7,29 +7,29 @@ use Orchid\CMS\Core\Models\Post;
 use Illuminate\Support\Facades\DB;
 use App\Comment;
 
-class NewsController extends Controller
+class PlacesController extends Controller
 {
     public function lister()
     {
         $url = $_SERVER["REQUEST_URI"];
         $url = explode('/', $url);
         array_shift($url);
-    	$post = Post::type('news')->get();
+       $post = Post::type('places')->get();
     	for($i=0;$i<count($post);$i++)
         {
             $img = DB::select('select * from attachments where post_id = ?',[$post[$i]->id]);
             $post[$i]['image'] = $img;
         }
     	return view('pages.development-list',[
-         	'arResult' =>$post,
+         	'arResult' => $post,
             'url' =>$url,
          ]);
     }
-
     public function inner(Request $request, $name)
     {
+
         $post = Post::where('slug','=',$name)
-                ->where('type','=','news')
+                ->where('type','=','places')
                 ->firstOrFail();
         if($request->input('name') && $request->input('content'))
         {
@@ -49,4 +49,5 @@ class NewsController extends Controller
             'arResult' =>$post,
          ]);
     }
+
 }

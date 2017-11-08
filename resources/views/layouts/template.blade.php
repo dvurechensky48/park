@@ -9,6 +9,7 @@
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('bootstrap/css/bootstrap-theme.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/mobile-menu.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main-page.css') }}" rel="stylesheet">
     <!-- Основной файл стилей -->
     <link rel="stylesheet" href="{{ asset('owl-carousel/owl.carousel.css') }}">
@@ -21,7 +22,9 @@
      
     <!-- Сам плагин слайдера -->
     <script src="{{ asset('owl-carousel/owl.carousel.js') }}"></script>
-     
+    
+    <!-- Ленивая загрузка изображений -->
+    <script src="{{ asset('js/lazy-load.js') }}" type="text/javascript"></script> 
     
 
     <!--[if lt IE 9]>
@@ -37,5 +40,6 @@
 <script src="{{ asset('js/height.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/script.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/init.js') }}" type="text/javascript"></script>
+<script type="text/javascript" src="{{ asset('js/touch-menu.js') }}"></script>
 </body>
 </html>

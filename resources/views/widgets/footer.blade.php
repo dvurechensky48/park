@@ -1,4 +1,5 @@
 <!-- footer -->
+@widget('SearchConsole')
 <section class="blue footer">
     <div class="container-fluid">
         <div class="row">
@@ -20,7 +21,7 @@
             </div>
             <div class="clearfix"></div>
             <div class="redseparator-big">
-                <div class="big-circle">
+                <div class="big-circle hidden-xs hidden-sm">
                     <img src="{{ asset('img/big-logo.png') }}">
                 </div>
             </div>
@@ -39,4 +40,5 @@
         </div>
     </div>
 </section>
+
 <!-- end footer --> 

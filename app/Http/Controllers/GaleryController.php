@@ -28,7 +28,7 @@ class GaleryController extends Controller
         $img = DB::select('select * from attachments where post_id = ?',[$post->id]);
         $post['image'] = $img;
 
-    	return view('pages.galery-list',[
+    	return view('pages.galery-inner',[
          	'arResult' =>$post,
          ]);
     }

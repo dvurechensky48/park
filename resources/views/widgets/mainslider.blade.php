@@ -9,7 +9,7 @@
                 	@foreach($arResult as $value)
 					 <div class="item">
 					    <div class="img">
-					        <img src="{{ asset('storage/') }}/<?= $value['image']['0']->path ?><?= $value['image']['0']->name ?>.png">
+					        <img src="{{ asset('storage/') }}/<?= $value['image']['0']->path ?><?= $value['image']['0']->name ?>.<?= $value['image']['0']->extension ?>">
 					    </div>
 					    <div class="center padding-2">
 					        <div class="desc"><?= $value->content['en']["small_text"] ?></div>
@@ -18,8 +18,8 @@
 					    </div>
 					    <div class="top padding-2">
 					        <?= $value->content['en']["phone_number"] ?>
-					        
 					    </div>
+					    
 					 </div>
 					@endforeach
                 

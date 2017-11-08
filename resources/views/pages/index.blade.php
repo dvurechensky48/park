@@ -79,47 +79,18 @@
                 <section id="gal-main" class="padding-2 blue">
                     <h2 class="all-center">Галлерея событий</h2>
                     <div class="all-center">
-                        <div class="margin-top-4 circle-main"> <a class="img" href="#"><img src="img/gal-main.png"></a> </div>
+                        <div class="margin-top-4 circle-main"> <a class="img" href="/galery"><img src="img/gal-main.png"></a> </div>
                     </div>
                 </section>
                 <section class="padding-2 white">
-                    <h2 class="all-center">Наши партнеры</h2>
-                    <div class="partner-main margin-top-8">
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <a class="img" href="#"><img src="img/part1.png"></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a class="img" href="#"><img src="img/part2.png"></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a class="img" href="#"><img src="img/part3.png"></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a class="img" href="#"><img src="img/part1.png"></a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-3">
-                                <a class="img" href="#"><img src="img/part2.png"></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a class="img" href="#"><img src="img/part3.png"></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a class="img" href="#"><img src="img/part1.png"></a>
-                            </div>
-                            <div class="col-xs-3">
-                                <a class="img" href="#"><img src="img/part2.png"></a>
-                            </div>
-                        </div>
-                    </div>
+                    @widget('Partner')
                 </section>
             </div>
             <div class="clearfix"></div>
     </div>
     <!-- end content -->
-
+    
+   
     @widget('Footer')	
 
 @endsection

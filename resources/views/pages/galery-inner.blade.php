@@ -2,13 +2,14 @@
 @section('content')
 	@widget('TopMenu')
 	@widget('RedHeader') 
-   <!-- content -->
+    <!-- content -->
+     
     <section class="white">
         <div class="container-fluid">
             <div class="row">
                  <div class="col-sm-4">
                      <div class="slidebar-2 height-target">
-                         @widget('GalerySlidebar') 
+                         @widget('GalerySlidebarInner') 
                      </div>
                  </div>
 

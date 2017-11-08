@@ -18,7 +18,10 @@ class TopMenu extends Widget {
 
         $menu = Menu::get();
         $this->menu = $menu; 
-        $this->url = $_SERVER["REQUEST_URI"];
+        $url = $_SERVER["REQUEST_URI"];
+        $url = explode('/', $url);
+        array_shift($url);
+        $this->url = $url;
     }
 
     /**

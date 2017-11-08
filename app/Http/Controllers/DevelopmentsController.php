@@ -11,20 +11,24 @@ class DevelopmentsController extends Controller
 {
     public function lister()
     {
-    	$post = Post::type('developments')->get();
+        $url = $_SERVER["REQUEST_URI"];
+        $url = explode('/', $url);
+        array_shift($url);
+       $post = Post::type('developments')->get();
     	for($i=0;$i<count($post);$i++)
         {
             $img = DB::select('select * from attachments where post_id = ?',[$post[$i]->id]);
             $post[$i]['image'] = $img;
         }
     	return view('pages.development-list',[
-         	'arResult' =>$post,
+         	'arResult' => $post,
+            'url' =>$url,
          ]);
     }
 
     public function inner(Request $request, $name)
     {
-        
+
         $post = Post::where('slug','=',$name)
                 ->where('type','=','developments')
                 ->firstOrFail();

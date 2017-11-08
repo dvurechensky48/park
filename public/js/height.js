@@ -64,7 +64,7 @@ function autoMargin(object,position)
 			object[i].style.marginTop = -height + 'px';
 		}
 	}
-	else if(!object)
+	else if(!object || object.length == 0)
 	{
 		return false;
 	}

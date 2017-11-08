@@ -31,7 +31,9 @@ return [
         App\Core\Behaviors\Many\Employment::class,
         App\Core\Behaviors\Many\Galery::class,
         App\Core\Behaviors\Many\News::class,
+        App\Core\Behaviors\Many\Places::class,
         App\Core\Behaviors\Many\Typical::class,
+        App\Core\Behaviors\Many\Partner::class,
     ],
 
     /*

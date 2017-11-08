@@ -1,5 +1,3 @@
-
-
 @if(!empty($arResult))
 	@foreach($arResult as $value)
 		<div class="item-small">
@@ -12,7 +10,7 @@
 		    <div class="title">
 		        <?= explode(' ', $value->publish_at)[0] ?>
 		    </div>
-		    <a href="galery/<?= $value->slug ?>"></a>
+		    <a href="<?= $value->slug ?>"></a>
 		</div> 
 	@endforeach
-@endif
+@endif 

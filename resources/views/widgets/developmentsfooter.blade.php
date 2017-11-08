@@ -1,31 +1,23 @@
-@extends('layouts.template')
-@section('title')
-
-@section('content')
-	@widget('TopMenu')
-	@widget('BlueHeader')
-
-	 <!-- content -->
-	 
-    <section class="white">
+<section class="white">
         <div class="container-fluid">
             <div class="row">
+                <h3>Ближайшие события</h3>
                 <div class="slidebar">
-                   @if(!empty($arResult))
-                   	@foreach($arResult as $value)
-                   		<? 
-                   			$date = explode(' ', $value['publish_at']) ;
-                   			
-                   		 ?>
-	                   	<div class="col-sm-4 margin-top-2">
+                @if(!empty($arResult))
+                	<? $item = 1; ?>
+                	@foreach($arResult as $value)
+	                	<? 
+							$date = explode(' ', $value['publish_at']) ;
+                   		?>
+	                	<div class="col-sm-6 col-md-4 margin-top-2">
 	                        <div class="item">
 	                            <div class="img">
-									@if(!empty($value->image))
+	                                @if(!empty($value->image))
 	                            	<img src="{{ asset('storage/') }}/<?= $value->image[0]->path ?><?= $value->image[0]->name ?>.<?= $value->image[0]->extension ?>">
 	                            	@else
 	                            	<img width="100%" src="http://www.iakr.ru/iTDGh/KorTaxcpwtdhmjO">
 	                            	@endif
-	                            	<div class="text-left">
+	                                <div class="text-left">
 	                                    <div class="row">
 	                                        <div class="col-xs-12 color-white">
 	                                            <div class="date all-center"><?= $date[0] ?></div>
@@ -43,17 +35,22 @@
 	                                        <div class="clearfix"></div>
 	                                    </div>
 	                                </div>
-	                                <a class="link" href="/{{ $url[0] }}/{{ $value->slug }}"></a>
+	                                <a class="link" href="/developments/{{ $value->slug }}"></a>
 	                            </div>
 	                        </div>
 	                    </div>
-                   	@endforeach
-                   @endif
+	                    @if($item % 3 == 0)
+	                    <div class="clearfix hidden-xs hidden-sm"></div>
+	                    @elseif($item % 2 == 0)
+	                    <div class="clearfix hidden-lg hidden-md"></div>
+	                    @endif
+	                    <? $item = $item + 1; ?>
+                	@endforeach
+                @endif
+                    
+
+
                 </div>
             </div>
         </div>
-    </section>
-    <!-- end content -->
-
-	@widget('Footer')
-@endsection
+    </section> 

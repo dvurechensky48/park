@@ -25,6 +25,7 @@
 	                        <div class="clearfix"></div>
 	                    </div>
 	                </div>
+	                <a class="link" href="/{{ $url[1] }}/{{ $value->slug }}"></a>
 	            </div>
 	        </div>
 

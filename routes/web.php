@@ -24,5 +24,8 @@ Route::get('/news', 'NewsController@lister');
 Route::get('/news/{name}', 'NewsController@inner');
 Route::get('/about', 'HomeController@about');
 Route::get('/typical/{name}', 'HomeController@typical');
+Route::get('/search','HomeController@search');
+Route::get('/places', 'PlacesController@lister');
+Route::get('/places/{name}', 'PlacesController@inner');
 
 Route::get('/test','HomeController@test');

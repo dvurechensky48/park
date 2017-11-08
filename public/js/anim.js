@@ -27,6 +27,7 @@ var slidebar = document.querySelector('.slidebar');
                 var left = item[i].querySelector('.text-left');
                 var right = item[i].querySelector('.text-right');
                 var separator = item[i].querySelector('.blackseparator-small');
+                var description = item[i].querySelector('.description');
                 
                 if(left && right)
                 {
@@ -39,6 +40,7 @@ var slidebar = document.querySelector('.slidebar');
                     leftRow.style.marginTop = 20 + 'px';
                     rightRow.style.marginTop = 20 + 'px';
                     separator.style.display = 'none';
+                    description.style.display = 'none';
                 }
             }
             
@@ -49,10 +51,12 @@ var slidebar = document.querySelector('.slidebar');
         var left = object.querySelector('.text-left');
         var right = object.querySelector('.text-right');
         var separator = object.querySelector('.blackseparator-small');
+        var description = object.querySelector('.description');
                 
         if(left && right)
         {
             separator.style.display = 'block';
+            description.style.display = 'block';
             var leftRow = left.querySelector('.row');
             var rightRow = right.querySelector('.row');
             leftRow.style.position = 'relative';
@@ -72,7 +76,8 @@ var slidebar = document.querySelector('.slidebar');
                 target = event.CurrentTarget || event.srcElement;
             autoHeightOff(slidebar);
             onmouseOut(slidebar);
-            if (target.className == 'img') {
+            if (target.className == 'link') {
+                target = target.parentNode;
                 autoHeightOn(target);
                 var left = target.querySelector('.text-left');
                 var right = target.querySelector('.text-right');

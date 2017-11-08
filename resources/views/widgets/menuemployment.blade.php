@@ -1,5 +1,5 @@
 @if(!empty($arResult))
-<div class="menu-2">
+<div class="menu-2 hidden-xs hidden-sm">
     <div class="container-fluid">
         <div class="row">
             <ul class="col-sm-12">

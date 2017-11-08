@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use Orchid\CMS\Core\Models\Post;
 use Illuminate\Support\Facades\DB;
@@ -43,20 +44,53 @@ class HomeController extends Controller
             'arResult' =>$post,
          ]);
     }
+    public function search(Request $request)
+    {
+        if($request->input('q'))
+        {
+         $posts = Post::whereIn('type', ['news','developments','places'])->take(20)->get();
+         $search = array();
+         for($i=0;$i<count($posts);$i++)
+         {
+            if(strripos($posts[$i]->content['en']['body'], $request->input('q')))
+            {
+                $search[] = $posts[$i];
+            }
+         }
+         
+         return view('pages.search',[
+            'arResult' => $search,
+         ]);
+        }
+        else{
+            return redirect('/');
+        }
+
+         
+
+    }
+
     public function test(Request $request)
     {
-        
-        echo('HELLO');
-        echo('<br>');
-        $name = $request->input('name');
-        echo($name);
-        $post = new Comment;
-        $post->post_id = 4;
-        $post->user_id = 1;
-        $post->parent_id = 1;
-        $post->content = 'Работает епт 2';
-        $post->name = 'Почетный гость';
-        $post->approved = true;
-        $post->save();
+        if($request->input('q'))
+        {
+         $posts = Post::whereIn('type', ['news','developments'])->take(10)->get();
+         $search = array();
+         for($i=0;$i<count($posts);$i++)
+         {
+            if(strpos($posts[$i]->content['en']['body'], $request->input('q')))
+            {
+                $search[] = $posts[$i];
+            }
+         }
+         
+         dd($search);  
+        }
+        else{
+            return redirect('/');
+        }
+
+         
+
     }
 }

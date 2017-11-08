@@ -8,6 +8,8 @@ html,body
 	font-size: 16px;
 	font-weight: 400;
 	letter-spacing: 0.8px;
+	overflow-x:hidden;
+	min-height: 100% !important;
 }
 body
 {
@@ -20,6 +22,10 @@ h1
 	font-weight: 700;
 	letter-spacing: 3.6px;
 	text-align: center;
+}
+h1>*
+{
+	position: relative;
 }
 .rozseparator:before
 {
@@ -45,6 +51,7 @@ h1
 	margin-left: -51px;
 	top:62px;
 }
+
 .redseparator-big
 {
 	position: relative;
@@ -116,6 +123,11 @@ h4
 section
 {
 	padding: 45px 0;
+	position: relative;
+}
+.display-none
+{
+	display: none;
 }
 .nopadding
 {
@@ -281,6 +293,10 @@ img
 {
 	opacity: 0.55;
 }
+.over-hidden
+{
+	overflow: hidden;
+}
 
 /*
 menu
@@ -412,8 +428,25 @@ slidebar
 .slidebar .img
 {
 	position: relative;
+	height: 270px;
 	overflow: hidden;
 	cursor: pointer;
+	text-align: center;
+}
+.slidebar .img img
+{
+	width: 100% !important;
+	height: auto !important;
+}
+.slidebar .link
+{
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left:0;
+	z-index: 10;
 }
 .slidebar .img:before
 {
@@ -425,6 +458,10 @@ slidebar
 	width:100%;
 	height: 100%;
 	z-index: 1;
+}
+.slidebar .big-date
+{
+	display: none;
 }
 .slidebar .text-right
 {
@@ -473,6 +510,7 @@ slidebar
 }
 .slidebar .description
 {
+	display: none;
 	margin-top: 30px;
 }
 /*
@@ -581,6 +619,12 @@ end slidebar-2
 /*
 footer
 */
+.footer
+{
+	position: relative;
+	width: 100%;
+	bottom: 0;
+}
 .footer .phone
 {
 	font-weight: 700;
@@ -660,10 +704,28 @@ end footer
 /*
 	gallery
 */
+.loader
+{
+	position: absolute;
+	width: 100%;
+	top:30%;
+}
+.lazy-load
+{
+	position: relative;
+	z-index: 1;
+}
 .gallery img
 {
 	width: 100%;
 }
+.gallery
+{
+	position: relative;
+	height: 800px;
+	overflow: hidden;
+}
+
 /*
 	end gallery
 */
@@ -724,4 +786,75 @@ comment_go
 }
 /*
 end comment_go
+*/
+
+/*
+search console
+*/
+#search-console-box
+{
+	position: absolute;
+	display: none;
+	width: 100%;
+	height: 1000%;
+	top:0;
+	left: 0;
+	z-index: 1000;
+}
+#search-console-box:before
+{
+	content:"X";
+	position: absolute;
+	display: block;
+	width:40px;
+	height: 40px;
+	border-radius: 40px;
+	line-height: 40px;
+	text-align: center;
+	top:30px;
+	right:30px;
+	font-size: 21px;
+	border:1px solid #fff;
+}
+
+#search-console-box .row
+{
+	position: relative;
+	top:50%;
+	height: 200px;
+}
+#search-console-box form
+{
+	position: relative;
+	margin-top:17%;
+	display: block;
+}
+#search-console-box input
+{
+	padding: 0;
+	margin:0;
+	width: 100%;
+	color:#000;
+	height: 30px;
+}
+#search-console-box input.console
+{
+	padding: 0 10px;
+}
+.search-result
+{
+	padding: 15px;
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+	border-radius:3px;
+}
+.search-result:hover
+{
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+}
+/*
+end search console
 */
