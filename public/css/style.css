@@ -710,7 +710,7 @@ end footer
 	width: 100%;
 	top:30%;
 }
-.lazy-load
+.lazyload
 {
 	position: relative;
 	z-index: 1;

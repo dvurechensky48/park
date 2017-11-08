@@ -28,12 +28,18 @@ return [
     'many' => [
         App\Core\Behaviors\Many\MainSlider::class,
         App\Core\Behaviors\Many\Developments::class,
-        App\Core\Behaviors\Many\Employment::class,
         App\Core\Behaviors\Many\Galery::class,
         App\Core\Behaviors\Many\News::class,
         App\Core\Behaviors\Many\Places::class,
         App\Core\Behaviors\Many\Typical::class,
         App\Core\Behaviors\Many\Partner::class,
+        App\Core\Behaviors\Many\Employment::class,
+        App\Core\Behaviors\Many\EmploymentSport::class,
+        App\Core\Behaviors\Many\EmploymentAtrakc::class,
+        App\Core\Behaviors\Many\EmploymentConcert::class,
+        App\Core\Behaviors\Many\EmploymentEda::class,
+        App\Core\Behaviors\Many\EmploymentEksk::class,
+        App\Core\Behaviors\Many\EmploymentKwest::class,
     ],
 
     /*
@@ -47,7 +53,6 @@ return [
 
     'menu' => [
         'header'  => 'Top Menu',
-        'mobile' => 'Mobile Menu',
     ],
 
     /*

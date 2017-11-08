@@ -16,15 +16,23 @@
 Route::get('/', 'HomeController@index');
 Route::get('/developments', 'DevelopmentsController@lister');
 Route::get('/developments/{name}', 'DevelopmentsController@inner');
+
 Route::get('/employment', 'EmploymentController@lister');
 Route::get('/employment/{name}', 'EmploymentController@inner');
+Route::get('/employment/{name}/{view}', 'EmploymentController@view');
+
 Route::get('/galery', 'GaleryController@lister');
 Route::get('/galery/{name}', 'GaleryController@inner');
+
 Route::get('/news', 'NewsController@lister');
 Route::get('/news/{name}', 'NewsController@inner');
+
 Route::get('/about', 'HomeController@about');
+
 Route::get('/typical/{name}', 'HomeController@typical');
+
 Route::get('/search','HomeController@search');
+
 Route::get('/places', 'PlacesController@lister');
 Route::get('/places/{name}', 'PlacesController@inner');
 

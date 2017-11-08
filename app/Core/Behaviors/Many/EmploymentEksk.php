@@ -3,26 +3,26 @@
 namespace App\Core\Behaviors\Many;
 
 use Orchid\CMS\Behaviors\Many;
+use App\Http\Forms\Posts\Options;
 use Orchid\CMS\Http\Forms\Posts\BasePostForm;
 use Orchid\CMS\Http\Forms\Posts\UploadPostForm;
 
-
-class Places extends Many
+class EmploymentEksk extends Many
 {
     /**
      * @var string
      */
-    public $name = 'Места';
+    public $name = 'Чем заняться / Экскурсии';
 
     /**
      * @var string
      */
-    public $description = 'Места в нижнем парке';
+    public $description = 'Экскурсии в нижнем парке';
 
     /**
      * @var string
      */
-    public $slug = 'places';
+    public $slug = 'excursions';
 
     /**
      * Slug url /news/{name}.
@@ -49,10 +49,9 @@ class Places extends Many
     public function fields() : array
     {
         return [
-            'name'                  => 'tag:input|type:name|name:name|max:100|required|title:Название места',
-            'body'                  => 'tag:wysiwyg|name:body|max:255|required|rows:10|title:Описание места',
-            'body-small'            => 'tag:textarea|name:body-small|max:255|required|rows:10|title:Краткое описание места',
-            'important'             => 'tag:input|type:important|name:phone_number|max:100|required|title:Важная информация',
+            'name'                  => 'tag:input|type:name|name:name|max:100|required|title:Название раздела',
+            'article-title'         => 'tag:input|type:name|name:article-title|max:100|required|title:Заголовок статьи',
+            'body'                  => 'tag:wysiwyg|name:body|max:255|required|rows:10|title:Описание',
             'title'                 => 'tag:input|type:title|name:title|max:255|required|title:title SEO',
             'description'           => 'tag:textarea|name:description|max:255|required|rows:5|title:Description SEO',
             'keywords'              => 'tag:tags|name:keywords|max:255|required|title:keywords SEO',

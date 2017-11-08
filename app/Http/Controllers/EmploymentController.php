@@ -23,11 +23,29 @@ class EmploymentController extends Controller
 
     public function inner($name)
     {
-    	$post = Post::where('slug','=',$name)
-                ->where('type','=','employment')
-                ->firstOrFail();
+    	$post = Post::where('type','=',$name)
+                ->get();
+        for($i=0;$i<count($post);$i++)
+        {
+            $img = DB::select('select * from attachments where post_id = ?',[$post[$i]->id]);
+            $post[$i]['image'] = $img;
+        }
         return view('pages.employment-inner',[
             'arResult' =>$post,
          ]);
+    }
+
+    public function view($name, $view)
+    {
+      $post = Post::where('slug','=',$view)
+                ->where('type','=',$name)
+                ->firstOrFail();
+        
+        $img = DB::select('select * from attachments where post_id = ?',[$post->id]);
+        $post['image'] = $img;
+        
+        return view('pages.employment-view',[
+            'arResult' =>$post,
+         ]);  
     }
 }

@@ -32,6 +32,8 @@ class DevelopmentsController extends Controller
         $post = Post::where('slug','=',$name)
                 ->where('type','=','developments')
                 ->firstOrFail();
+        $img = DB::select('select * from attachments where post_id = ?',[$post->id]);
+        $post['image'] = $img;
         if($request->input('name') && $request->input('content'))
         {
             if(iconv_strlen($request->input('name')) > 0 && iconv_strlen($request->input('name')) < 50 && iconv_strlen($request->input('content')) > 0)

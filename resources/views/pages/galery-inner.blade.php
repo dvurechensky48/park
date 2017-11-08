@@ -22,11 +22,12 @@
                             @foreach($arResult->image as $value)
                             <div class="gallery">
                                 <img class="lazyload" src="#" data-src="{{ asset('storage/') }}/<?= $value->path ?><?= $value->name ?>.<?= $value->extension ?>">
+                                <div class="all-center loader">
+                                    <img style="margin-top:5%;width:50px;min-width:auto;" src="{{ asset('img/load.gif') }}">
+                                    <div>Загрузка...</div>
+                                </div>
                             </div>
-                            <div class="all-center loader">
-                                <img style="margin-top:20%;width:50px;min-width:auto;" src="{{ asset('img/load.gif') }}">
-                                <div>Загрузка...</div>
-                            </div>
+                            
                             @endforeach
                          @endif
                      </div>

@@ -62,6 +62,20 @@
                             <div class="date"><?= $arResult->publish_at ?></div>
                             <div class="margin-top-2">
                                 <p><?= $arResult->content['en']['body'] ?></p>
+                                @if(count($arResult->image > 0))
+                                    <div id="owl-example" class="owl-carousel">
+                                    @foreach($arResult->image as $value)
+                                        <div class="gallery">
+                                            <img class="lazyload" src="#" data-src="{{ asset('storage/') }}/<?= $value->path ?><?= $value->name ?>.<?= $value->extension ?>">
+                                            <div class="all-center loader">
+                                                <img style="margin-top:5%;width:50px;min-width:auto;" src="{{ asset('img/load.gif') }}">
+                                                <div>Загрузка...</div>
+                                            </div>
+                                        </div>
+                                        
+                                    @endforeach
+                                    </div>
+                                @endif
                             </div>
                             
                             @if(!empty($arResult->content['en']['phone_number']))
@@ -88,7 +102,12 @@
         </div>
     </section>
     <!-- end content -->
+    <script type="text/javascript">
+        window.addEventListener("load", function(event) {
+        lazyload();
+    });
 
+    </script>
 
 	@widget('Footer')
 @endsection
