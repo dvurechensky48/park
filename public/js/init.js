@@ -14,7 +14,6 @@
   }
     );
 });
-
   $(document).ready(function() {
   $("#owl-example").owlCarousel(
   {
@@ -27,10 +26,10 @@
     navigation : true,
     navigationText : ["<",">"],
     dots: false,
- 
   }
     );
 });
 
-   alignment2(document.querySelectorAll('.height-object'),document.querySelectorAll('.height-target'));
-    autoMargin(document.querySelectorAll('.fio'),'relative');
+
+  alignment2(document.querySelectorAll('.height-object'),document.querySelectorAll('.height-target'));
+  autoMargin(document.querySelectorAll('.fio'),'relative');

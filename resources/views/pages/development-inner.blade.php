@@ -77,7 +77,6 @@
                                     </div>
                                 @endif
                             </div>
-                            
                             @if(!empty($arResult->content['en']['phone_number']))
                                 <h3 class="requer"><?= $arResult->content['en']['phone_number'] ?></h3>
                             @endif

@@ -1,5 +1,22 @@
 @extends('layouts.template')
+
 @section('title')
+    @if(!empty($SEO))
+    <?= $SEO->content["en"]["title"] ?>
+    @endif
+@endsection
+
+@section('description')
+    @if(!empty($SEO))
+    <?= $SEO->content["en"]["description"] ?>
+    @endif
+@endsection
+
+@section('keywords')
+    @if(!empty($SEO))
+    <?= $SEO->content["en"]["keywords"] ?>
+    @endif
+@endsection
 
 @section('content')
 

@@ -11,7 +11,7 @@ class RedHeader extends Widget {
      * Class constructor.
      */
     public function __construct(){
-        $posts = Post::select('slug','content')
+        $posts = Post::select('slug','content')->where('type','!=','page')
                 ->get();
         $url = $_SERVER["REQUEST_URI"];
         $url = explode('/', $url);

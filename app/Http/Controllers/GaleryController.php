@@ -8,6 +8,15 @@ use Illuminate\Support\Facades\DB;
 
 class GaleryController extends Controller
 {
+    public $seo;
+
+    public function __construct(){
+        $post = Post::where('slug','=','galery')
+                ->where('type','=','page')
+                ->firstOrFail();
+        $this->seo = $post;
+    }
+
     public function lister()
     {
     	$post = Post::type('galery')->first();
@@ -17,6 +26,7 @@ class GaleryController extends Controller
 
     	return view('pages.galery-list',[
          	'arResult' =>$post,
+            'SEO' => $this->seo,
          ]);
     }
     public function inner($name)

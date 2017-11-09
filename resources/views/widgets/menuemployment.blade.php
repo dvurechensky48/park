@@ -4,10 +4,16 @@
         <div class="row">
             <ul class="col-sm-12">
                 @foreach($arResult as $value)
-                @if($url == $value->slug)
-                <li><a class="active" href="<?= $value->slug ?>"><?= $value->content['en']['name'] ?></a></li>
+                @if(count($url) > 2)
+                <? $link = '/employment/'.$value->slug ?>
                 @else
-                <li><a href="<?= $value->slug ?>"><?= $value->content['en']['name'] ?></a></li>
+                <? $link =  $value->slug  ?>
+                @endif
+
+                @if($url[1] == $value->slug)
+                <li><a class="active" href="<?= $link ?>"><?= $value->content['en']['name'] ?></a></li>
+                @else
+                <li><a href="<?= $link ?>"><?= $value->content['en']['name'] ?></a></li>
                 @endif
                 @endforeach
                 

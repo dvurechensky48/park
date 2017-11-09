@@ -9,6 +9,15 @@ use App\Comment;
 
 class DevelopmentsController extends Controller
 {
+    public $seo;
+
+    public function __construct(){
+        $post = Post::where('slug','=','developments')
+                ->where('type','=','page')
+                ->firstOrFail();
+        $this->seo = $post;
+    }
+
     public function lister()
     {
         $url = $_SERVER["REQUEST_URI"];
@@ -23,6 +32,7 @@ class DevelopmentsController extends Controller
     	return view('pages.development-list',[
          	'arResult' => $post,
             'url' =>$url,
+            'SEO' => $this->seo,
          ]);
     }
 

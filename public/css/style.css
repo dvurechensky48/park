@@ -725,6 +725,14 @@ end footer
 	height: 800px;
 	overflow: hidden;
 }
+.origin
+{
+	position: absolute;
+	z-index: 1000;
+	bottom: 0;
+	right: 0;
+
+}
 
 /*
 	end gallery

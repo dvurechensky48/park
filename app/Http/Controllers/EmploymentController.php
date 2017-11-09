@@ -8,6 +8,15 @@ use Illuminate\Support\Facades\DB;
 
 class EmploymentController extends Controller
 {
+    public $seo;
+
+    public function __construct(){
+        $post = Post::where('slug','=','employment')
+                ->where('type','=','page')
+                ->firstOrFail();
+        $this->seo = $post;
+    }
+
     public function lister()
     {
     	$post = Post::type('employment')->get();
@@ -18,7 +27,16 @@ class EmploymentController extends Controller
         }
     	return view('pages.employment-list',[
          	'arResult' =>$post,
+            'SEO' =>$this->seo,
          ]);
+    }
+
+    public function getSeo($name)
+    {
+        $post = Post::where('slug','=', $name)
+                ->where('type','=','employment')
+                ->firstOrFail();
+        return $post;
     }
 
     public function inner($name)
@@ -32,6 +50,7 @@ class EmploymentController extends Controller
         }
         return view('pages.employment-inner',[
             'arResult' =>$post,
+            'SEO' => $this->getSeo($name),
          ]);
     }
 

@@ -24,7 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        $post = Post::where('slug','=','index')
+                ->where('type','=','page')
+                ->firstOrFail();
+        return view('pages.index',[
+            'SEO' => $post,
+         ]);
     }
     public function about()
     {

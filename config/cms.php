@@ -14,6 +14,12 @@ return [
     'single' => [
         App\Core\Behaviors\Single\About::class,
         App\Core\Behaviors\Single\Information::class,
+        App\Core\Behaviors\Single\IndexSeo::class,
+        App\Core\Behaviors\Single\DevelopmentsSeo::class,
+        App\Core\Behaviors\Single\NewsSeo::class,
+        App\Core\Behaviors\Single\PlacesSeo::class,
+        App\Core\Behaviors\Single\GalerySeo::class,
+        App\Core\Behaviors\Single\EmploymentSeo::class,
     ],
 
     /*

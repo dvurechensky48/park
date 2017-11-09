@@ -14,7 +14,8 @@ class MenuEmployment extends Widget {
     public function __construct(){
         $menu = Post::where('type','=','employment')->get();
         $url = $_SERVER["REQUEST_URI"];
-        $url = explode('/', $url)[2];
+        $url = explode('/', $url);
+        array_shift($url);
         $this->menu = $menu;
         $this->url = $url;
     }

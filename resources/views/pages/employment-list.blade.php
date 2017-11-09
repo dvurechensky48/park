@@ -1,6 +1,22 @@
-<? $item = 1; ?>
 @extends('layouts.template')
+
 @section('title')
+    @if(!empty($SEO))
+    <?= $SEO->content["en"]["title"] ?>
+    @endif
+@endsection
+
+@section('description')
+    @if(!empty($SEO))
+    <?= $SEO->content["en"]["description"] ?>
+    @endif
+@endsection
+
+@section('keywords')
+    @if(!empty($SEO))
+    <?= $SEO->content["en"]["keywords"] ?>
+    @endif
+@endsection
 
 @section('content')
 	@widget('TopMenu')
@@ -13,6 +29,7 @@
             <div class="row">
                 <div class="slidebar-2">
 				@if(!empty($arResult))
+					<? $item = 1; ?>
 					@foreach($arResult as $value)
 						@if($value->image)
 							<div class="col-md-4 col-sm-6 margin-top-2">
