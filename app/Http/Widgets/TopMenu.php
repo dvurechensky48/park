@@ -21,6 +21,12 @@ class TopMenu extends Widget {
         $url = $_SERVER["REQUEST_URI"];
         $url = explode('/', $url);
         array_shift($url);
+        for($k=0;$k<count($url);$k++)
+        {
+            $url_str = $url[$k];
+            $url_str = explode('?', $url_str);
+            $url[$k] = $url_str[0];
+        }
         $this->url = $url;
     }
 

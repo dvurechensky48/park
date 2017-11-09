@@ -3,8 +3,9 @@
 <!-- slider -->
     <div class="container-fluid nopadding">
         <div class="row nopadding">
+        	<div class="margin-top-4 hidden-md hidden-lg"></div>
             <div class="slider">
-                <div id="owl-example" class="owl-main">
+                <div id="owl-main" class="owl-main">
                      
                 	@foreach($arResult as $value)
 					 <div class="item">

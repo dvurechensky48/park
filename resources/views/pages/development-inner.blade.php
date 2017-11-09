@@ -42,19 +42,21 @@
                             </div>
                         </div>
 
-                        <h3>Бижайшие события</h3>
+                        <h3>Может вам будет интересно</h3>
                         
+                        <div class="height-target">
                         @widget('DevelopmentsSlidebar')
-
-                        <a href="#" class="item-after img">
-                            Подгрузить еще новостей
+                        <a href="/{{ $url[0] }}" class="item-after img">
+                            Вернуться к списку
                         </a>
+                        </div>
+                        
 
                     </div>
                 </div>
 
 
-                <div class="col-md-8">
+                <div class="col-md-8" id="height-object">
                     <div class="content">
                         
                         @if(!empty($arResult))
@@ -68,7 +70,7 @@
                                         <div class="gallery">
                                             <img class="lazyload" src="#" data-src="{{ asset('storage/') }}/<?= $value->path ?><?= $value->name ?>.<?= $value->extension ?>">
                                             <div class="all-center loader">
-                                                <img style="margin-top:5%;width:50px;min-width:auto;" src="{{ asset('img/load.gif') }}">
+                                                <img style="margin-top:5%;width:50px !important;min-width:auto;" src="{{ asset('img/load.gif') }}">
                                                 <div>Загрузка...</div>
                                             </div>
                                         </div>

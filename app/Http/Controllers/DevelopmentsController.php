@@ -23,7 +23,13 @@ class DevelopmentsController extends Controller
         $url = $_SERVER["REQUEST_URI"];
         $url = explode('/', $url);
         array_shift($url);
-       $post = Post::type('developments')->get();
+        for($k=0;$k<count($url);$k++)
+        {
+            $url_str = $url[$k];
+            $url_str = explode('?', $url_str);
+            $url[$k] = $url_str[0];
+        }
+        $post = Post::type('developments')->paginate(9);
     	for($i=0;$i<count($post);$i++)
         {
             $img = DB::select('select * from attachments where post_id = ?',[$post[$i]->id]);
@@ -38,6 +44,15 @@ class DevelopmentsController extends Controller
 
     public function inner(Request $request, $name)
     {
+        $url = $_SERVER["REQUEST_URI"];
+        $url = explode('/', $url);
+        array_shift($url);
+        for($k=0;$k<count($url);$k++)
+        {
+            $url_str = $url[$k];
+            $url_str = explode('?', $url_str);
+            $url[$k] = $url_str[0];
+        }
 
         $post = Post::where('slug','=',$name)
                 ->where('type','=','developments')
@@ -60,6 +75,7 @@ class DevelopmentsController extends Controller
         }
         return view('pages.development-inner',[
             'arResult' =>$post,
+            'url' =>$url,
          ]);
     }
 }

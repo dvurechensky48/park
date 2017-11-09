@@ -10,6 +10,7 @@ function alignment(object,target,overflow)
 			if(overflow == true)
 			{
 				target[i].style.overflow = 'auto';
+				target[i].style.overflowX = 'hidden';
 			}
 
 		}

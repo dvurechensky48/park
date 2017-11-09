@@ -18,7 +18,8 @@
 	background: none !important;
 	font-size:24px;
 	padding: 16px 21px 16px 21px;
-	width: 63px;height: 56px;
+	width: 50%;
+	height: 56px;
 	line-height: 25px;
 	transition: 500ms;
 	opacity: 0.6 !important;}
@@ -30,7 +31,7 @@
 	background: none !important;
 	font-size:24px;
 	padding: 16px 21px 16px 21px;
-	width: 63px;
+	width: 50%;
 	height: 56px;
 	line-height: 25px;
 	transition: 500ms;

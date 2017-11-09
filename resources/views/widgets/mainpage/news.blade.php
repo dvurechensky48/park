@@ -7,6 +7,7 @@
 		        <div class="date"><?= $date[0] ?> | <?= $value->content['en']['name'] ?></div>
 		        <p><a class="color-white underline" href="news/<?= $value->slug ?>"><?= $value->content['en']['body-small'] ?></a></p>
 		    </li>
+		    <div class="margin-top-4 hidden-lg hidden-md"></div>
 		@endforeach
 	@endif
 </ul>  

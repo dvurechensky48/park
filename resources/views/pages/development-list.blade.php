@@ -22,6 +22,7 @@
 	@widget('TopMenu')
 	@widget('BlueHeader')
 
+
 	 <!-- content -->
 	 
     <section class="white">
@@ -67,9 +68,19 @@
                    	@endforeach
                    @endif
                 </div>
+			</div>
+        </div>
+    </section>
+
+    <section class="white">
+
+    	<div class="container-fluid">
+            <div class="row">
+             <?php echo $arResult->links(); ?>	
             </div>
         </div>
     </section>
+
     <!-- end content -->
 
 	@widget('Footer')

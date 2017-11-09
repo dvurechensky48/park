@@ -87,7 +87,7 @@
                 <section class="padding-2 blue">
                     @widget('Developments')
                 </section>
-                <section id="zan" class="padding-2 white">
+                <section id="zan" class="padding-2 white hidden-xs hidden-sm">
                     <h2 class="all-center">Чем заняться?</h2>
                     <div class="zan-main">
                         @widget('Employment')

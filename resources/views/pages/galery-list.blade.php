@@ -25,14 +25,19 @@
     <section class="white">
         <div class="container-fluid">
             <div class="row">
-                 <div class="col-sm-4">
+                 <div class="col-sm-4 hidden-lg hidden-md">
+                     <div class="slidebar-2">
+                         @widget('GalerySlidebar') 
+                     </div>
+                 </div>   
+                 <div class="col-sm-4 hidden-xs hidden-sm">
                      <div class="slidebar-2 height-target">
                          @widget('GalerySlidebar') 
                      </div>
                  </div>
 
 
-                 <div class="col-sm-8" id="height-object">
+                <div class="col-sm-8 hidden-xs hidden-sm" id="height-object">
                      
 
                      <div id="owl-example" class="owl-carousel">
@@ -41,7 +46,7 @@
                             <div class="gallery">
                                 <img class="lazyload" src="#" data-src="{{ asset('storage/') }}/<?= $value->path ?><?= $value->name ?>.<?= $value->extension ?>">
                                 <div class="all-center loader">
-                                    <img style="margin-top:5%;width:50px;min-width:auto;" src="{{ asset('img/load.gif') }}">
+                                    <img style="margin-top:5%;width:50px !important;min-width:auto;" src="{{ asset('img/load.gif') }}">
                                     <div>Загрузка...</div>
                                 </div>
                             </div>
