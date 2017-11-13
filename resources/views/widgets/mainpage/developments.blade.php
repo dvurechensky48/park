@@ -7,7 +7,7 @@
 		        <div class="date"><?= $value->publish_at ?></div>
 		        <p><a class="color-white underline" href="developments/<?= $value->slug ?>"><?= $value->content['en']['body-small'] ?></a></p>
 		    </li>
-		    <div class="margin-top-4 hidden-lg hidden-md"></div>
+		    <div class="margin-top-4"></div>
 		@endforeach
 	@endif
 </ul> 

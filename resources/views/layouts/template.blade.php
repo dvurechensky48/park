@@ -18,15 +18,16 @@
     <link rel="stylesheet" href="{{ asset('owl-carousel/owl.theme.css') }}">
      
     <!--  Библиотека jQuery 1.7+  -->
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
      
     <!-- Сам плагин слайдера -->
     <script src="{{ asset('owl-carousel/owl.carousel.js') }}"></script>
     
+    @yield('assets')
+
+
     <!-- Ленивая загрузка изображений -->
     <script src="{{ asset('js/lazy-load.js') }}" type="text/javascript"></script> 
-    
-
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>

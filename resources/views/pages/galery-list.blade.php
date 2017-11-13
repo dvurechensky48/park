@@ -18,6 +18,16 @@
     @endif
 @endsection
 
+@section('assets')
+ <script src="{{ asset('gal/unitegallery/js/jquery-11.0.min.js') }}"></script>
+<script src="{{ asset('gal/unitegallery/js/unitegallery.min.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('gal/unitegallery/css/unite-gallery.css') }}">
+<script src="{{ asset('gal/unitegallery/themes/default/ug-theme-default.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('gal/unitegallery/themes/default/ug-theme-default.css') }}"> 
+@endsection
+
+
+
 @section('content')
 	@widget('TopMenu')
 	@widget('RedHeader') 
@@ -25,47 +35,55 @@
     <section class="white">
         <div class="container-fluid">
             <div class="row">
-                 <div class="col-sm-4 hidden-lg hidden-md">
-                     <div class="slidebar-2">
-                         @widget('GalerySlidebar') 
-                     </div>
-                 </div>   
-                 <div class="col-sm-4 hidden-xs hidden-sm">
-                     <div class="slidebar-2 height-target">
-                         @widget('GalerySlidebar') 
-                     </div>
-                 </div>
-
-
-                <div class="col-sm-8 hidden-xs hidden-sm" id="height-object">
-                     
-
-                     <div id="owl-example" class="owl-carousel">
-                         @if(!empty($arResult))
-                            @foreach($arResult->image as $value)
-                            <div class="gallery">
-                                <img class="lazyload" src="#" data-src="{{ asset('storage/') }}/<?= $value->path ?><?= $value->name ?>.<?= $value->extension ?>">
-                                <div class="all-center loader">
-                                    <img style="margin-top:5%;width:50px !important;min-width:auto;" src="{{ asset('img/load.gif') }}">
-                                    <div>Загрузка...</div>
+                <div class="slidebar-2">
+                @if(!empty($arResult))
+                    <? $item = 1; ?>
+                    @foreach($arResult as $value)
+                        @if($value->image)
+                            <div class="col-md-4 col-sm-6 margin-top-2">
+                                <div class="item" style="height: 260px;overflow: hidden;">
+                                    
+                                        <? if(!empty($value->image)) {?>
+                                            <div class="img">
+                                                <img src="{{ asset('storage/') }}/<?= $value['image'][0]->path ?><?= $value['image'][0]->name ?>.<?= $value->image[0]->extension ?>">
+                                            </div>
+                                        <? } ?>
+                                    <div class="title">
+                                        <?= $value->content['en']['name'] ?>
+                                    </div>
+                                    <a href="<?= $_SERVER["REQUEST_URI"] ?>/<?= $value->slug ?>"></a>
                                 </div>
                             </div>
-                            
-                            @endforeach
-                         @endif
-                     </div>
-                 </div>
-                 <div class="clearfix"></div>
+                            @if($item % 3 == 0)
+                            <div class="hidden-xs hidden-sm clearfix"></div>
+                            @endif
+                            @if($item % 2 == 0)
+                            <div class="hidden-lg hidden-md clearfix"></div>
+                            @endif
+                        @endif
+                        <? $item = $item + 1; ?>
+                    @endforeach
+                @endif
+                <!-- Не видно на мобильниках и планшетах <div class="hidden-xs hidden-sm clearfix"></div> -->
+                <div class="clearfix"></div>
+                </div>
+
+
+
+                 
             </div>
         </div>
         
     </section>
-    <!-- end content -->
-    <script type="text/javascript">
-        window.addEventListener("load", function(event) {
-        lazyload();
-    });
+    <section class="white">
 
-    </script>
+        <div class="container-fluid">
+            <div class="row">
+             <?php echo $arResult->links(); ?>  
+            </div>
+        </div>
+    </section>
+    <!-- end content -->
+    
     @widget('Footer')
 @endsection 

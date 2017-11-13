@@ -19,10 +19,13 @@ class GaleryController extends Controller
 
     public function lister()
     {
-    	$post = Post::type('galery')->first();
+    	$post = Post::type('galery')->paginate(9);
     	
-        $img = DB::select('select * from attachments where post_id = ?',[$post->id]);
-        $post['image'] = $img;
+        for($i=0;$i<count($post);$i++)
+        {
+            $img = DB::select('select * from attachments where post_id = ? limit 1',[$post[$i]->id]);
+            $post[$i]['image'] = $img;
+        }
 
     	return view('pages.galery-list',[
          	'arResult' =>$post,

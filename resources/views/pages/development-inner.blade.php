@@ -17,6 +17,14 @@
 	@endif
 @endsection
 
+@section('assets')
+<script src="{{ asset('gal/unitegallery/js/jquery-11.0.min.js') }}"></script>
+<script src="{{ asset('gal/unitegallery/js/unitegallery.min.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('gal/unitegallery/css/unite-gallery.css') }}">
+<script src="{{ asset('gal/unitegallery/themes/default/ug-theme-default.js') }}"></script>
+<link rel="stylesheet" href="{{ asset('gal/unitegallery/themes/default/ug-theme-default.css') }}"> 
+@endsection
+
 @section('content')
 	@widget('TopMenu')
 	@widget('BlueHeader') 
@@ -31,7 +39,8 @@
             <div class="row">
                 <div class="col-md-4 hidden-xs hidden-sm">
                     <div class="slidebar">
-                        <div class="calendar">
+                        <!-- 
+                         <div class="calendar">
                             <div class="row">
                                 <div class="col-xs-1"></div>
                                 <div class="col-xs-2 all-center"><a class="img color-ser black-hover" href="#"><</a></div>
@@ -41,6 +50,8 @@
                                 <div class="clearfix"></div>
                             </div>
                         </div>
+                        -->
+                       
 
                         <h3>Может вам будет интересно</h3>
                         
@@ -65,18 +76,17 @@
                             <div class="margin-top-2">
                                 <p><?= $arResult->content['en']['body'] ?></p>
                                 @if(count($arResult->image > 0))
-                                    <div id="owl-example" class="owl-carousel">
-                                    @foreach($arResult->image as $value)
-                                        <div class="gallery">
-                                            <img class="lazyload" src="#" data-src="{{ asset('storage/') }}/<?= $value->path ?><?= $value->name ?>.<?= $value->extension ?>">
-                                            <div class="all-center loader">
-                                                <img style="margin-top:5%;width:50px !important;min-width:auto;" src="{{ asset('img/load.gif') }}">
-                                                <div>Загрузка...</div>
-                                            </div>
-                                        </div>
-                                        
-                                    @endforeach
-                                    </div>
+                                    <div id="gallery" style="display:none;">
+                                         @if(!empty($arResult))
+                                            @foreach($arResult->image as $value)
+                                               <img class="lazyload"  alt="Preview Image 1"
+                                                 src="{{ asset('img/1.png') }}"
+                                                 data-src="{{ asset('storage/') }}/<?= $value->path ?><?= $value->name ?>.<?= $value->extension ?>"
+                                                 data-image="{{ asset('storage/') }}/<?= $value->path ?><?= $value->name ?>.<?= $value->extension ?>""
+                                                 data-description="Нижний парк">
+                                            @endforeach
+                                         @endif
+                                     </div>
                                 @endif
                             </div>
                             @if(!empty($arResult->content['en']['phone_number']))
@@ -106,8 +116,17 @@
     <script type="text/javascript">
         window.addEventListener("load", function(event) {
         lazyload();
-    });
+        jQuery("#gallery").unitegallery({
+                theme_enable_text_panel: false,
 
+            });
+        $(".lazyload").each(function(event) { 
+            $(".lazyload")[event].attr("data-image", $(".lazyload").attr("src")[event]);
+        });
+
+         });
+
+       
     </script>
 
 	@widget('Footer')

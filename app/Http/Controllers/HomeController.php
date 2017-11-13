@@ -75,26 +75,11 @@ class HomeController extends Controller
 
     }
 
-    public function test(Request $request)
+    public function test()
     {
-        if($request->input('q'))
-        {
-         $posts = Post::whereIn('type', ['news','developments'])->take(10)->get();
-         $search = array();
-         for($i=0;$i<count($posts);$i++)
-         {
-            if(strpos($posts[$i]->content['en']['body'], $request->input('q')))
-            {
-                $search[] = $posts[$i];
-            }
-         }
-         
-         dd($search);  
-        }
-        else{
-            return redirect('/');
-        }
-
+        
+        return view('pages.test',[
+          ]);
          
 
     }

@@ -11,6 +11,7 @@
 	            <div>Что то еще</div>
 	        </div>
 	    </div>
+	     
 	</div>
 	@endforeach
 @endif
