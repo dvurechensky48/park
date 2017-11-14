@@ -12,27 +12,21 @@ class Comment extends Widget {
      * Class constructor.
      */
     public function __construct(){
-        $posts = Post::select('id','slug')
-                ->get();
         $url = $_SERVER["REQUEST_URI"];
         $url = explode('/', $url);
         array_shift($url);
+
         for($i=0;$i<count($url);$i++)
         {
             $url_str = explode("?", $url[$i]);
             $url_str = array_shift($url_str);
-            for($k=0;$k<count($posts);$k++)
-            {
-                if($url_str == $posts[$k]->slug)
-                {
-                    $this->module = $posts[$k]->id;
-                    return;
-                }
-            }
             
+            $url[$i] = $url_str;
         }
+        $posts = Post::where('slug','=',$url[count($url) - 1])
+                ->firstOrFail();
         
-        
+        $this->module = $posts->id;  
     }
 
     /**

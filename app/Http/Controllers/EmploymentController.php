@@ -45,7 +45,7 @@ class EmploymentController extends Controller
                 ->get();
         for($i=0;$i<count($post);$i++)
         {
-            $img = DB::select('select * from attachments where post_id = ?',[$post[$i]->id]);
+            $img = DB::select('select * from attachments where post_id = ? limit 1',[$post[$i]->id]);
             $post[$i]['image'] = $img;
         }
         return view('pages.employment-inner',[

@@ -51,6 +51,7 @@ class Employment extends Many
         return [
             'name'                  => 'tag:input|type:name|name:name|max:100|required|title:Название раздела',
             'article-title'         => 'tag:input|type:name|name:article-title|max:100|required|title:Заголовок статьи',
+            'article-main'         => 'tag:input|type:article|name:article-main|max:100|required|title:Надпись под названием на главной',
             'body'                  => 'tag:wysiwyg|name:body|max:255|required|rows:10|title:Описание',
             'title'                 => 'tag:input|type:title|name:title|max:255|required|title:title SEO',
             'description'           => 'tag:textarea|name:description|max:255|required|rows:5|title:Description SEO',

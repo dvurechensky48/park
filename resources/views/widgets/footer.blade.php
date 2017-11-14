@@ -1,6 +1,6 @@
 <!-- footer -->
 @widget('SearchConsole')
-<section class="blue footer">
+<section id="footer" class="blue footer">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-6">

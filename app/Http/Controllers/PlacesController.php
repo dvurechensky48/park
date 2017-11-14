@@ -70,6 +70,7 @@ class PlacesController extends Controller
                 $comment->name = $request->input('name');
                 $comment->approved = true;
                 $comment->save();
+                return back();
             }
         }
         return view('pages.development-inner',[

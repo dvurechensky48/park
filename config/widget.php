@@ -30,5 +30,6 @@ return [
         'DevelopmentsFooter' => App\Http\Widgets\DevelopmentsFooter::class,
         'SearchConsole' => App\Http\Widgets\SearchConsole::class,
         'Partner' => App\Http\Widgets\Mainpage\Partner::class,
+        'Personal' => App\Http\Widgets\Mainpage\Personal::class,
     ],
 ];

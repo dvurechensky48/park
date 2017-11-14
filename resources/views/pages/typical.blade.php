@@ -22,7 +22,7 @@
 	@widget('BlueHeader') 
 	
 	@if(!empty($arResult))
-		<section class="white">
+		<section class="white content">
 	        <div class="container-fluid">
 	            <div class="row">
 	                <h2><?= $arResult->content['en']['name'] ?></h2>

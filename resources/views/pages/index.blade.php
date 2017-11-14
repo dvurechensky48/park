@@ -37,50 +37,23 @@
                     <div class="all-center">
                         <div class="margin-top-4 circle-main"> <a class="img" href="#"><img src="img/3d-tour.png"></a> </div>
                     </div>
+                    <div class="margin-top-4 all-center">
+                        <a class="color-white" href="/places">Места</a> / <a class="color-white" href="">3d тур</a>
+                    </div>
                     
                 </section>
                 <section class="padding-2 blue">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <h2 class="all-center">Новости</h2>
+                        </div>
+                    </div>
+                </section>
+                <section class="padding-2 white">
                     @widget('News')
                 </section>
                 <section class="padding-2 red">
-                    <h2 class="all-center">Для Вас работают</h2>
-                    <div class="for-you">
-                        <div class="row">
-                            <div class="margin-top-4">
-                                <div class="col-xs-4  all-right height-object"><img src="img/for.png"></div>
-                                <div class="col-xs-8 height-target">
-                                    <div class="fio">
-                                        <div class="name">Иванов Иван Иванович</div>
-                                        <div>Директор, идейный вдохновитель</div>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="margin-top-4">
-                                <div class="col-xs-4  all-right height-object"><img src="img/for.png"></div>
-                                <div class="col-xs-8 height-target">
-                                    <div class="fio">
-                                        <div class="name">Иванов Иван Иванович</div>
-                                        <div>Директор, идейный вдохновитель</div>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="margin-top-4">
-                                <div class="col-xs-4  all-right height-object"><img src="img/for.png"></div>
-                                <div class="col-xs-8 height-target">
-                                    <div class="fio">
-                                        <div class="name">Иванов Иван Иванович</div>
-                                        <div>Директор, идейный вдохновитель</div>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            
-                        </div>
-                    </div>
+                    @widget('Personal')
                 </section>
             </div>
             <div class="col-md-6 nopadding">
