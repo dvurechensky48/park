@@ -23,7 +23,18 @@ class EmploymentController extends Controller
     	for($i=0;$i<count($post);$i++)
         {
             $img = DB::select('select * from attachments where post_id = ?',[$post[$i]->id]);
-            $post[$i]['image'] = $img;
+            for($l=0;$l<count($img);$l++)
+            {
+                if($img[$l]->extension == 'svg')
+                {
+                    $post[$i]['svg'] = $img[$l];
+                }
+                else
+                {
+                    $post[$i]['image'] = $img[$l]; 
+                }
+            }
+           
         }
     	return view('pages.employment-list',[
          	'arResult' =>$post,

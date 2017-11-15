@@ -18,8 +18,7 @@
     <link rel="stylesheet" href="{{ asset('owl-carousel/owl.theme.css') }}">
      
     <!--  Библиотека jQuery 1.7+  -->
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-     
+    <script src="http://medkomplex.ru/js/jquery-1.8.3.min.js"></script>
     <!-- Сам плагин слайдера -->
     <script src="{{ asset('owl-carousel/owl.carousel.js') }}"></script>
     
@@ -42,5 +41,8 @@
 <script src="{{ asset('js/script.js') }}" type="text/javascript"></script>
 <script src="{{ asset('js/init.js') }}" type="text/javascript"></script>
 <script type="text/javascript" src="{{ asset('js/touch-menu.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/cookie.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/spec_version.js') }}"></script>
+    
 </body>
 </html>

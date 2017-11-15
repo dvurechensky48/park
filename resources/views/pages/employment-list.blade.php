@@ -34,18 +34,17 @@
 						@if($value->image)
 							<div class="col-md-4 col-sm-6 margin-top-2">
 			                    <div class="item">
-									<? for($i=0;$i<count($value->image);$i++) { ?>
-										<? if($value->image[$i]->extension == 'png') {?>
-											<div class="img">
-					                            <img src="{{ asset('storage/') }}/<?= $value['image'][$i]->path ?><?= $value['image'][$i]->name ?>.<?= $value->image[$i]->extension ?>">
-					                        </div>
-										<? } ?>
-										<? if($value->image[$i]->extension == 'svg') {?>
-											<div class="icon">
-					                            <img src="{{ asset('storage/') }}/<?= $value['image'][$i]->path ?><?= $value['image'][$i]->name ?>.<?= $value->image[$i]->extension ?>">
-					                        </div>
-										<? } ?>
-									<? } ?>
+									@if(!empty($value->image))
+										<div class="img">
+				                            <img src="{{ asset('storage/') }}/<?= $value->image->path ?><?= $value->image->name ?>.<?= $value->image->extension ?>">
+				                        </div>
+									@endif
+
+									@if(!empty($value->svg))
+										<div class="icon">
+				                            <img src="{{ asset('storage/') }}/<?= $value->svg->path ?><?= $value->svg->name ?>.<?= $value->svg->extension ?>">
+				                        </div>
+									@endif
 									<div class="title">
 					                    <?= $value->content['en']['name'] ?>
 					                </div>
