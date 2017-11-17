@@ -3,6 +3,7 @@
 use Orchid\Widget\Service\Widget;
 use Orchid\CMS\Core\Models\Post;
 use Orchid\CMS\Core\Models\Menu;
+use Illuminate\Support\Facades\Session;
 
 class BlueHeader extends Widget {
     public $post;
@@ -36,7 +37,8 @@ class BlueHeader extends Widget {
         }
         if(empty($this->post))
         {
-            $menu = Menu::get();
+            $lang = $this->getLang();
+            $menu = Menu::where('lang',$lang)->get();
             $url = $_SERVER["REQUEST_URI"];
             $url = explode('/', $url);
             array_shift($url);
@@ -52,6 +54,17 @@ class BlueHeader extends Widget {
             }
         }
 
+    }
+
+    function getLang()
+    {
+        $lang = Session::get('local'); 
+        if(empty($lang))
+        {
+            $lang = 'ru';
+        }
+        
+        return $lang;
     }
 
     /**

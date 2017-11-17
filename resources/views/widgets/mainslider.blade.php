@@ -8,7 +8,7 @@
                 <div id="owl-main" class="owl-main">
                      
                 	@foreach($arResult as $value)
-					 <div class="item">
+					 <div class="item active">
 					    <div class="img">
 					        <img src="{{ asset('storage/') }}/<?= $value['image']['0']->path ?><?= $value['image']['0']->name ?>.<?= $value['image']['0']->extension ?>">
 					    </div>

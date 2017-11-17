@@ -1,5 +1,5 @@
 
-<h2 class="all-center">События</h2>
+
 <ul class="programm">
     @if(!empty($arResult))
 		@foreach($arResult as $value)

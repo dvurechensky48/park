@@ -94,7 +94,7 @@
 	overflow: hidden;
 }
 
-.slider .item:before
+.slider .item.active:before
 {
 	content: "";
 	display: block;

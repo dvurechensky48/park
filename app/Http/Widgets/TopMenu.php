@@ -2,6 +2,7 @@
 
 use Orchid\Widget\Service\Widget;
 use Orchid\CMS\Core\Models\Menu;
+use Illuminate\Support\Facades\Session;
 
 class TopMenu extends Widget {
 	/**
@@ -9,14 +10,15 @@ class TopMenu extends Widget {
      */
     public $menu;
     public $url;
+    public $lang;
 
 
     /**
      * Class constructor.
      */
     public function __construct(){
-
-        $menu = Menu::get();
+        $lang = $this->getLang();
+        $menu = Menu::where('lang',$lang)->get();
         $this->menu = $menu; 
         $url = $_SERVER["REQUEST_URI"];
         $url = explode('/', $url);
@@ -30,6 +32,25 @@ class TopMenu extends Widget {
         $this->url = $url;
     }
 
+    function getLang()
+    {
+        $lang = Session::get('local'); 
+        if(empty($lang))
+        {
+            $lang = 'ru';
+        }
+        if($lang == 'ru')
+        {
+            $this->lang = 'en';
+        }
+        else if($lang == 'en')
+        {
+            $this->lang = 'ru';
+        }
+        
+        return $lang;
+    }
+
     /**
      * @return mixed
      */
@@ -37,6 +58,7 @@ class TopMenu extends Widget {
          return view('widgets.topmenu', [
             'arResult' => $this->menu,
             'url' => $this->url,
+            'lang' => $this->lang,
         ]);
      }
 

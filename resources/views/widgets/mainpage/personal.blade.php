@@ -1,4 +1,4 @@
-<h2 class="all-center">Для Вас работают</h2>
+
 <div class="for-you">
 	<div class="row">
 		@if(!empty($arResult))

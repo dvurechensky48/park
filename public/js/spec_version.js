@@ -1,9 +1,11 @@
  $(document).ready(function () {
     function setVision(schema) {
 
+
         var elems = $('img,section,section,div,body,span:not(.s-c),p,a,ul,li,h1,h2,h3,h4,h5,input');
-        var elems_bg = $('div:not(.invert-color),body,span:not(.s-c),p,a:not(.s-c),ul,li,h1,h2,h3,h4,h5,input');
+        var elems_bg = $('div:not(.invert-color),body,span:not(.s-c),p,ul,li,h1,h2,h3,h4,h5,input');
         var elems_invert = $('.popped a.active, .invert-color,input[type="submit"]');
+
         if (schema == 'blue') {
             var params = {'color': '#063462', 'background': 'none', 'text-shadow':'none','border-color':'#063462'};
             var params_bg = {'background-color': '#9DD1FF' };
@@ -18,19 +20,19 @@
 
         }
         if (schema == 'wb') {
-            var params = {'color': 'white', 'background': 'none', 'background-color': 'black', 'text-shadow':'none','border-color':'white'};
+            var params = {'color': 'white', 'background': 'none', 'text-shadow':'none','border-color':'white'};
             var params_bg = {'background-color': 'black' };
             var params_invert = {'color': 'black', 'background-color': 'white', 'border-color':'black', 'outline-color':'white'};
 
         }
         if (schema == 'beige') {
-            var params = {'color': '#4d4b43', 'background': 'none', 'background-color': '#f7f3d6', 'text-shadow':'none','border-color':'#4d4b43'};
+            var params = {'color': '#4d4b43', 'background': 'none', 'text-shadow':'none','border-color':'#4d4b43'};
             var params_bg = {'background-color': '#f7f3d6' };
             var params_invert = {'color': '#f7f3d6', 'background-color': '#4d4b43',  'border-color':'#f7f3d6', 'outline-color':'#4d4b43'};
 
         }
         if (schema == 'brown') {
-            var params = {'color': '#a9e44d', 'background': 'none', 'background-color': '#3b2716', 'text-shadow':'none','border-color':'#a9e44d'};
+            var params = {'color': '#a9e44d', 'background': 'none',  'text-shadow':'none','border-color':'#a9e44d'};
             var params_bg = {'background-color': '#3b2716' };
             var params_invert = {'color': '#3b2716', 'background-color': '#a9e44d',  'border-color':'#3b2716', 'outline-color':'#a9e44d'};
 
@@ -257,7 +259,7 @@
         '</div>'+
         '</div>' +
         '<div class="gost s-c invert-color">Вы просматриваете сайт в версии для слабовидящих по ГОСТ Р 52872-2012. '+
-        '<a id="button_no_vision" class="s-c invert-color "> Вернуться к обычной версии </a>'+
+        '<a id="button_no_vision" class="s-c invert-color " style="cursor:pointer;"> Вернуться к обычной версии </a>'+
         '</div>'+
         '</div>';
     $('body').prepend(panel);
@@ -268,6 +270,20 @@
         } else {
             theme = 'bw';
         }
+
+        if(document.querySelectorAll('#owl-main .item').length > 0)
+        {
+            for(k=0;k<document.querySelectorAll('#owl-main .item').length;k++)
+            {
+                document.querySelectorAll('#owl-main .item')[k].classList.remove('active');
+                document.querySelectorAll('#owl-main .item .img img')[k].style.visibility = 'hidden';
+                console.log(k);
+            }        
+        }
+
+
+        
+
         setVision('bw');
         setVision('bw');//РќРµ СѓР±РёСЂР°С‚СЊ РІС‚РѕСЂРѕР№ РІС‹Р·РѕРІ С„СѓРЅРєС†РёРё
         setFontsize(16);
@@ -334,6 +350,7 @@
     });
     $('#button_no_vision').bind('click', function () {
         $('body').css({'margin-top':'60px'});
+        
         $.cookie('theme', null, {path: '/'});
         document.location.href = location.href;
     });

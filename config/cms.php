@@ -110,6 +110,14 @@ return [
             'regional' => 'en_GB',
             'required' => true,
         ],
+        'ru' => [
+            'name'     => 'Russian',
+            'script'   => 'Rus',
+            'dir'      => 'ru',
+            'native'   => 'Russia',
+            'regional' => 'ru_RUS',
+            'required' => true,
+        ],
     ],
 
 

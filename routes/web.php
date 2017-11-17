@@ -37,3 +37,19 @@ Route::get('/places', 'PlacesController@lister');
 Route::get('/places/{name}', 'PlacesController@inner');
 
 Route::get('/test','HomeController@test');
+
+
+/*
+	localization
+*/
+
+Route::get('/ru', function(){
+   Session::put('local', 'ru');
+   return Redirect::back();
+});
+
+
+Route::get('/en', function(){
+    Session::put('local', 'en');
+    return Redirect::back();
+});

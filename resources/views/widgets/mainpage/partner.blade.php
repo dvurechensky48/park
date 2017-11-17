@@ -1,6 +1,6 @@
 
 
-<h2 class="all-center">Наши партнеры</h2>
+
 <div class="partner-main margin-top-8">
     @if(!empty($arResult))
     	<? $item = 1; ?>

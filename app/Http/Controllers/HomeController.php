@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 use Orchid\CMS\Core\Models\Post;
 use Illuminate\Support\Facades\DB;
 use App\Comment;
@@ -22,8 +24,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+   
+
     public function index()
     {
+        $lang = Session::get('local');
+        App::setLocale($lang);
+
         $post = Post::where('slug','=','index')
                 ->where('type','=','page')
                 ->firstOrFail();
@@ -77,9 +84,12 @@ class HomeController extends Controller
 
     public function test()
     {
-        
-        return view('pages.test',[
-          ]);
+        $lang = Session::get('local'); 
+        if(empty($lang))
+        {
+            $lang = 'ru';
+        }
+        return $lang;
          
 
     }
