@@ -6,8 +6,11 @@
     <title>@yield('title')</title>
     <meta name="description" content="@yield('description')">
     <meta name="keywords" content="@yield('keywords')">
+     <!--  Библиотека jQuery 1.7+  -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('bootstrap/css/bootstrap-theme.min.css') }}" rel="stylesheet">
+	<script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/mobile-menu.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main-page.css') }}" rel="stylesheet">
@@ -15,8 +18,7 @@
     <link rel="stylesheet" href="{{ asset('owl-carousel/owl.carousel.css') }}">
     <!-- Тема по умолчанию -->
     <link rel="stylesheet" href="{{ asset('owl-carousel/owl.theme.css') }}">
-    <!--  Библиотека jQuery 1.7+  -->
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+   
     <!-- Сам плагин слайдера -->
     <script src="{{ asset('owl-carousel/owl.carousel.js') }}"></script>
     

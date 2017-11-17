@@ -31,6 +31,8 @@
             <div class="col-md-6 nopadding">
                 <section class="padding-2 white">
                     @widget('Information')
+
+
                 </section>
                 <section id="tour" class="padding-2 blue">
                     <h2 class="all-center">{{ trans('pages/index.virtual_tour') }}</h2>
@@ -84,8 +86,9 @@
 
 
     <!-- end content -->
-    
-   
+     
+                    
+    @widget('Modal')
     @widget('Footer')	
 
 @endsection

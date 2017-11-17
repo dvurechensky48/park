@@ -1046,3 +1046,49 @@ a.slider-btn:hover
 {
 	display: none;
 }
+
+/*
+Модальное окно
+*/
+
+.modal-footer, .modal-header
+{
+	border-top:0 !important;
+	border-bottom: 0 !important;
+}
+.btn-default
+{
+	color: #ffffff;
+    display: inline;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    padding: 16px 19px;
+    border: 2px solid #fff;
+    transition: 300ms;
+    background: none;
+    text-shadow: 0; 
+    -webkit-box-shadow: 0; 
+    box-shadow: 0; 
+}
+.btn-primary
+{
+	color: #ffffff;
+    display: inline;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    padding: 16px 19px;
+    border: 2px solid #fff;
+    transition: 300ms;
+    background: none;
+    text-shadow: 0; 
+    -webkit-box-shadow: 0; 
+    box-shadow: 0;
+    border:2px solid #fff; 
+}
+.btn-primary:hover, .btn-primary:focus
+{
+	background: #cc8080;
+	border:2px solid #cc8080;
+}

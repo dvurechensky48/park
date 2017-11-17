@@ -31,5 +31,6 @@ return [
         'SearchConsole' => App\Http\Widgets\SearchConsole::class,
         'Partner' => App\Http\Widgets\Mainpage\Partner::class,
         'Personal' => App\Http\Widgets\Mainpage\Personal::class,
+        'Modal' => App\Http\Widgets\Modal::class,
     ],
 ];

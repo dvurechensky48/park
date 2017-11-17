@@ -24,13 +24,13 @@
 					        	<span class="svg-span"><object class="svg-slider" style="cursor:pointer;" data="{{ asset('img/slider/slider2.svg') }}" type="image/svg+xml"></object></span>
 					        	<span class="svg-span"><object class="svg-slider" style="cursor:pointer;" data="{{ asset('img/slider/slider3.svg') }}" type="image/svg+xml"></object></span>
 					        	<div class="svg-after">
-				        		<a href="#footer" class="img slider-btn">Контакты</a>
+				        		<a href="/typical/contact" class="img slider-btn">Контакты</a>
 					        	</div>
 					        	<div class="svg-after">
-					        		<a href="malta:zet48@mail.ru" class="img slider-btn">Написать e-mail</a>
+					        		<a href="mailto:octavian48@yanex.ru" class="img slider-btn">Написать e-mail</a>
 					        	</div>
 					        	<div class="svg-after">
-					        		<a href="$" class="img slider-btn">Обратная связь</a>
+                                    <a href="#myModal" class="img slider-btn" data-toggle="modal">Обратная связь</a>
 					        	</div>
 				        	</div>
 				        	
