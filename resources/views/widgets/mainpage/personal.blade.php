@@ -6,7 +6,7 @@
 				<div class="margin-top-4">
 			        <div class="col-xs-4  all-right height-object">
 			        	@if(!empty($value->image))
-			        		<img src="{{ asset('storage/') }}/<?= $value->image[0]->path ?><?= $value->image[0]->name ?>.<?= $value->image[0]->extension ?>">
+			        		<img width="80%" src="{{ asset('storage/') }}/<?= $value->image[0]->path ?><?= $value->image[0]->name ?>.<?= $value->image[0]->extension ?>">
 			        	@endif
 			        </div>
 			        <div class="col-xs-8 height-target">

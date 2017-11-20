@@ -42,7 +42,7 @@ return [
              * MySQL, PostgreSQL, SQLite and Mongo databases are supported.
              */
             'databases' => [
-                'mysql',
+                'PostgreSQL',
             ],
         ],
 
