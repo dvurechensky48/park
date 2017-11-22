@@ -10,24 +10,21 @@
                 	@foreach($arResult as $value)
 					 <div class="item active">
 					    <div class="img">
-					        <img src="{{ asset('storage/') }}/<?= $value['image']['0']->path ?><?= $value['image']['0']->name ?>.<?= $value['image']['0']->extension ?>">
+					        <img src="{{ asset('storage/app/public/') }}/<?= $value['image']['0']->path ?><?= $value['image']['0']->name ?>.<?= $value['image']['0']->extension ?>">
 					    </div>
 					    <div class="center padding-2">
 					        <div class="desc"><?= $value->content['en']["small_text"] ?></div>
 					        <div class="title"><?= $value->content['en']["big_text"] ?></div>
 					        <div class="margin-top-4 all-center"><a class="btn img" href="<?= $value->content['en']["button_link"] ?>"><?= $value->content['en']["button_text"] ?></a></div>
 					    </div>
-					    <div class="top padding-2">
+					    <div class="top padding-2 hidden-sm hidden-xs">
 					        <div><?= $value->content['en']["phone_number"] ?></div>
 					        <div>
 					        	<span class="svg-span"><object class="svg-slider" data="{{ asset('img/slider/slider1.svg') }}" type="image/svg+xml"></object></span>
-					        	<span class="svg-span"><object class="svg-slider" style="cursor:pointer;" data="{{ asset('img/slider/slider2.svg') }}" type="image/svg+xml"></object></span>
+					        	
 					        	<span class="svg-span"><object class="svg-slider" style="cursor:pointer;" data="{{ asset('img/slider/slider3.svg') }}" type="image/svg+xml"></object></span>
 					        	<div class="svg-after">
 				        		<a href="/typical/contact" class="img slider-btn">Контакты</a>
-					        	</div>
-					        	<div class="svg-after">
-					        		<a href="mailto:octavian48@yanex.ru" class="img slider-btn">Написать e-mail</a>
 					        	</div>
 					        	<div class="svg-after">
                                     <a href="#myModal" class="img slider-btn" data-toggle="modal">Обратная связь</a>

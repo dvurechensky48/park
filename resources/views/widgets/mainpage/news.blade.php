@@ -1,7 +1,7 @@
 <ul class="programm">
     @if(!empty($arResult))
 		@foreach($arResult as $value)
-			<? $date = explode(' ', $value->publish_at); ?>
+			<?php $date = explode(' ', $value->publish_at); ?>
 			<li>
 		        <div class="date" style="color:#000 !important;"><?= $date[0] ?> | <?= $value->content['en']['name'] ?></div>
 		        <p><a class="underline" href="news/<?= $value->slug ?>"><?= $value->content['en']['body-small'] ?></a></p>

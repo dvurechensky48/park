@@ -51,7 +51,7 @@
                    
                     @for($i=0;$i < count($arResult->image);$i++)
                         <div class="img">
-                            <img style="min-width: auto;" src="{{ asset('storage/') }}/<?= $arResult->image[$i]->path ?><?= $arResult->image[$i]->name ?>.<?= $arResult->image[$i]->extension ?>">
+                            <img style="min-width: auto;" src="{{ asset('storage/app/public/') }}/<?= $arResult->image[$i]->path ?><?= $arResult->image[$i]->name ?>.<?= $arResult->image[$i]->extension ?>">
                         </div>
                     @endfor
                 @endif

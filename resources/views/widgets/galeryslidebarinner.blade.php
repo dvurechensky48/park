@@ -2,7 +2,7 @@
 	@foreach($arResult as $value)
 		<div class="item-small">
 		    <div class="img">
-		        <img src="{{ asset('storage/') }}/<?= $value->image[0]->path ?><?= $value->image[0]->name ?>.<?= $value->image[0]->extension ?>">
+		        <img src="{{ asset('storage/app/public/') }}/<?= $value->image[0]->path ?><?= $value->image[0]->name ?>.<?= $value->image[0]->extension ?>">
 		    </div>
 		    <div class="icon">
 		        <?= $value->content['en']['name'] ?>

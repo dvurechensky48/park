@@ -49,8 +49,8 @@
                             @foreach($arResult->image as $value)
                                <img class="lazyload"  alt="Preview Image 1"
                                  src="{{ asset('img/1.png') }}"
-                                 data-src="{{ asset('storage/') }}/<?= $value->path ?><?= $value->name ?>.<?= $value->extension ?>"
-                                 data-image="{{ asset('storage/') }}/<?= $value->path ?><?= $value->name ?>.<?= $value->extension ?>""
+                                 data-src="{{ asset('storage/app/public/') }}/<?= $value->path ?><?= $value->name ?>.<?= $value->extension ?>"
+                                 data-image="{{ asset('storage/app/public/') }}/<?= $value->path ?><?= $value->name ?>.<?= $value->extension ?>""
                                  data-description="Нижний парк">
                                  
                             @endforeach

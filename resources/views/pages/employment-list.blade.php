@@ -29,20 +29,20 @@
             <div class="row">
                 <div class="slidebar-2">
 				@if(!empty($arResult))
-					<? $item = 1; ?>
+					<?php $item = 1; ?>
 					@foreach($arResult as $value)
 						@if($value->image)
 							<div class="col-md-4 col-sm-6 margin-top-2">
 			                    <div class="item">
 									@if(!empty($value->image))
 										<div class="img">
-				                            <img src="{{ asset('storage/') }}/<?= $value->image->path ?><?= $value->image->name ?>.<?= $value->image->extension ?>">
+				                            <img src="{{ asset('storage/app/public/') }}/<?= $value->image->path ?><?= $value->image->name ?>.<?= $value->image->extension ?>">
 				                        </div>
 									@endif
 
 									@if(!empty($value->svg))
 										<div class="icon">
-				                            <img src="{{ asset('storage/') }}/<?= $value->svg->path ?><?= $value->svg->name ?>.<?= $value->svg->extension ?>">
+				                            <img src="{{ asset('storage/app/public/') }}/<?= $value->svg->path ?><?= $value->svg->name ?>.<?= $value->svg->extension ?>">
 				                        </div>
 									@endif
 									<div class="title">
@@ -58,7 +58,7 @@
 			                <div class="hidden-lg hidden-md clearfix"></div>
 			                @endif
 						@endif
-						<? $item = $item + 1; ?>
+						<?php $item = $item + 1; ?>
 					@endforeach
 				@endif
 				<!-- Не видно на мобильниках и планшетах <div class="hidden-xs hidden-sm clearfix"></div> -->

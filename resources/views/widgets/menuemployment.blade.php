@@ -5,9 +5,9 @@
             <ul class="col-sm-12">
                 @foreach($arResult as $value)
                 @if(count($url) > 2)
-                <? $link = '/employment/'.$value->slug ?>
+                <?php $link = '/employment/'.$value->slug ?>
                 @else
-                <? $link =  $value->slug  ?>
+                <?php $link =  $value->slug  ?>
                 @endif
 
                 @if($url[1] == $value->slug)

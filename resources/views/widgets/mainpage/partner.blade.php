@@ -7,7 +7,7 @@
 	    @foreach($arResult as $value)
 	    	
 	    	<div class="col-xs-3">
-	            <a target="_blank" class="img" title="{{ $value->content['en']['name'] }}" href="{{ $value->content['en']['link'] }}"><img src="{{ asset('storage/') }}/<?= $value->image[0]->path ?><?= $value->image[0]->name ?>.<?= $value->image[0]->extension ?>"></a>
+	            <a target="_blank" class="img" title="{{ $value->content['en']['name'] }}" href="{{ $value->content['en']['link'] }}"><img src="{{ asset('storage/app/public/') }}/<?= $value->image[0]->path ?><?= $value->image[0]->name ?>.<?= $value->image[0]->extension ?>"></a>
 	        </div>
 
 	    	<? $item = $item + 1; ?>

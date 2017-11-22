@@ -1,12 +1,12 @@
 @if(!empty($arResult))
 	@foreach($arResult as $value)
-		<? 
+		<?php 
 		$date = explode(' ', $value->publish_at);
 		?>
 		@if($url[2] != $value->slug)
 			<div class="item">
 	            <div class="img">
-	                <img src="{{ asset('storage/') }}/<?= $value->image[0]->path ?><?= $value->image[0]->name ?>.<?= $value->image[0]->extension ?>"">
+	                <img src="{{ asset('storage/app/public/') }}/<?= $value->image[0]->path ?><?= $value->image[0]->name ?>.<?= $value->image[0]->extension ?>"">
 	                <div class="text-left">
 	                    <div class="row">
 	                        <div class="col-xs-12 color-white">

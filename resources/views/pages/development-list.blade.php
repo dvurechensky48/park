@@ -1,5 +1,8 @@
 @extends('layouts.template')
 
+
+
+
 @section('title')
     @if(!empty($SEO))
     <?= $SEO->content["en"]["title"] ?>
@@ -31,7 +34,7 @@
                 <div class="slidebar">
                    @if(!empty($arResult))
                    	@foreach($arResult as $value)
-                   		<? 
+                   		<?php 
                    			$date = explode(' ', $value['publish_at']) ;
                    			
                    		 ?>
@@ -39,7 +42,7 @@
 	                        <div class="item">
 	                            <div class="img">
 									@if(!empty($value->image))
-	                            	<img src="{{ asset('storage/') }}/<?= $value->image[0]->path ?><?= $value->image[0]->name ?>.<?= $value->image[0]->extension ?>">
+	                            	<img src="{{ asset('storage/app/public/') }}/<?= $value->image[0]->path ?><?= $value->image[0]->name ?>.<?= $value->image[0]->extension ?>">
 	                            	@else
 	                            	<img width="100%" src="http://www.iakr.ru/iTDGh/KorTaxcpwtdhmjO">
 	                            	@endif

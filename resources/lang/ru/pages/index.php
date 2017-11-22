@@ -1,4 +1,4 @@
-<?
+<?php
 return array(
     'developments' => 'События',
     'virtual_tour' => 'Виртуальный тур по парку',

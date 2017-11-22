@@ -31,14 +31,14 @@
             <div class="row">
                 <div class="slidebar-2">
                 @if(!empty($arResult))
-                    <? $item = 1; ?>
+                    <?php $item = 1; ?>
                     @foreach($arResult as $value)
                         @if($value->image)
                             <div class="col-md-4 col-sm-6 margin-top-2">
                                 <div class="item">
                                    @if(!empty($value->image))
                                     <div class="img">
-                                        <img src="{{ asset('storage/') }}/<?= $value['image'][0]->path ?><?= $value['image'][0]->name ?>.<?= $value->image[0]->extension ?>">
+                                        <img src="{{ asset('storage/app/public/') }}/<?= $value['image'][0]->path ?><?= $value['image'][0]->name ?>.<?= $value->image[0]->extension ?>">
                                     </div>
                                     @else
                                     <div class="img">
@@ -59,7 +59,7 @@
                             <div class="hidden-lg hidden-md clearfix"></div>
                             @endif
                         @endif
-                        <? $item = $item + 1; ?>
+                        <?php $item = $item + 1; ?>
                     @endforeach
                 @endif
                 <!-- Не видно на мобильниках и планшетах <div class="hidden-xs hidden-sm clearfix"></div> -->

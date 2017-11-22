@@ -1,4 +1,4 @@
-<?
+<?php
 return array(
     'developments' => 'Developments',
     'virtual_tour' => 'Virtual tour of the park',

@@ -651,13 +651,13 @@ end footer
 {
 	position: absolute;
 	padding: 0 10px;
-	background: #bd6a6b;
 	right: 10px;
 }
 .soc-seti img
 {
 	width:auto;
 	height: 100%;
+	background: #bd6a6b;
 	min-width: auto;
 }
 .white-hover:hover

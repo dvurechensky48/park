@@ -4,16 +4,16 @@
                 <h3>Ближайшие события</h3>
                 <div class="slidebar">
                 @if(!empty($arResult))
-                	<? $item = 1; ?>
+                	<?php $item = 1; ?>
                 	@foreach($arResult as $value)
-	                	<? 
+	                	<?php
 							$date = explode(' ', $value['publish_at']) ;
                    		?>
 	                	<div class="col-sm-6 col-md-4 margin-top-2">
 	                        <div class="item">
 	                            <div class="img">
 	                                @if(!empty($value->image))
-	                            	<img src="{{ asset('storage/') }}/<?= $value->image[0]->path ?><?= $value->image[0]->name ?>.<?= $value->image[0]->extension ?>">
+	                            	<img src="{{ asset('storage/app/public/') }}/<?= $value->image[0]->path ?><?= $value->image[0]->name ?>.<?= $value->image[0]->extension ?>">
 	                            	@else
 	                            	<img width="100%" src="http://www.iakr.ru/iTDGh/KorTaxcpwtdhmjO">
 	                            	@endif
@@ -44,7 +44,7 @@
 	                    @elseif($item % 2 == 0)
 	                    <div class="clearfix hidden-lg hidden-md"></div>
 	                    @endif
-	                    <? $item = $item + 1; ?>
+	                    <?php $item = $item + 1; ?>
                 	@endforeach
                 @endif
                     
