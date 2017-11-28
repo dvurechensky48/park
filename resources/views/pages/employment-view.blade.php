@@ -1,20 +1,27 @@
 @extends('layouts.template')
+
 @section('title')
-	@if(!empty($arResult))
-	<?= $arResult->content["en"]["title"] ?>
-	@endif
+    @if(!empty($arResult->content[$lang]["description"]))
+    <?= $arResult->content[$lang]["title"] ?>
+    @else
+    Нижний парк
+    @endif
 @endsection
 
 @section('description')
-	@if(!empty($arResult))
-	<?= $arResult->content["en"]["description"] ?>
-	@endif
+    @if(!empty($arResult->content[$lang]["description"]))
+    <?= $arResult->content[$lang]["description"] ?>
+    @else
+    Нижний парк
+    @endif
 @endsection
 
 @section('keywords')
-	@if(!empty($arResult))
-	<?= $arResult->content["en"]["keywords"] ?>
-	@endif
+    @if(!empty($arResult->content[$lang]["description"]))
+    <?= $arResult->content[$lang]["keywords"] ?>
+    @else
+    Нижний парк
+    @endif
 @endsection
 
 @section('content')
@@ -29,7 +36,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-3">
-                    <h2><?= $arResult->content["en"]["article-title"] ?></h2>
+                    <h2><?= $arResult->content[$lang]["article-title"] ?></h2>
                 </div>
                 <div class="col-xs-6"></div>
                 <div class="col-xs-3 all-right">
@@ -44,7 +51,7 @@
     <section class="white">
         <div class="container-fluid">
             <div class="row">
-                <p><?= $arResult->content["en"]["body"] ?></p>
+                <p><?= $arResult->content[$lang]["body"] ?></p>
                 
                    
                 @if(count($arResult->image) > 0)

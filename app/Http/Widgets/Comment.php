@@ -3,6 +3,7 @@
 use Orchid\Widget\Service\Widget;
 use App\Comment as CommentModel;
 use Orchid\CMS\Core\Models\Post;
+use Illuminate\Support\Facades\App;
 
 class Comment extends Widget {
 
@@ -15,7 +16,6 @@ class Comment extends Widget {
         $url = $_SERVER["REQUEST_URI"];
         $url = explode('/', $url);
         array_shift($url);
-
         for($i=0;$i<count($url);$i++)
         {
             $url_str = explode("?", $url[$i]);

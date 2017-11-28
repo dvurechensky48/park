@@ -3,6 +3,7 @@
 use Orchid\Widget\Service\Widget;
 use Orchid\CMS\Core\Models\Post;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class Employment extends Widget {
     public $post;
@@ -27,6 +28,24 @@ class Employment extends Widget {
         }
         $this->post = $post;
     }
+    function getLang()
+    {
+        $lang = Session::get('local'); 
+        if(empty($lang))
+        {
+            $lang = 'ru';
+        }
+        if($lang == 'ru')
+        {
+            $this->lang = 'en';
+        }
+        else if($lang == 'en')
+        {
+            $this->lang = 'ru';
+        }
+        
+        return $lang;
+    }
 
     /**
      * @return mixed
@@ -34,6 +53,7 @@ class Employment extends Widget {
      public function run(){
          return view('widgets.mainpage.employment',[
             'arResult' => $this->post,
+            'lang' => $this->getLang(),
          ]);
      }
 

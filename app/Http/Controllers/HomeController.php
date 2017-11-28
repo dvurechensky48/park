@@ -24,7 +24,24 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-   
+    function getLang()
+    {
+        $lang = Session::get('local'); 
+        if(empty($lang))
+        {
+            $lang = 'ru';
+        }
+        if($lang == 'ru')
+        {
+            $this->lang = 'en';
+        }
+        else if($lang == 'en')
+        {
+            $this->lang = 'ru';
+        }
+        
+        return $lang;
+    }
 
     public function index()
     {
@@ -36,6 +53,7 @@ class HomeController extends Controller
                 ->firstOrFail();
         return view('pages.index',[
             'SEO' => $post,
+            'lang' => $this->getLang(),
          ]);
     }
     public function about()
@@ -45,6 +63,17 @@ class HomeController extends Controller
                 ->firstOrFail();
         return view('pages.typical',[
             'arResult' =>$post,
+            'lang' => $this->getLang(),
+         ]);
+    }
+    public function contact()
+    {
+        $post = Post::where('slug','=','contacts')
+                ->where('type','=','page')
+                ->firstOrFail();
+        return view('pages.typical',[
+            'arResult' =>$post,
+            'lang' => $this->getLang(),
          ]);
     }
     public function typical($name)
@@ -54,6 +83,7 @@ class HomeController extends Controller
                 ->firstOrFail();
         return view('pages.typical',[
             'arResult' =>$post,
+            'lang' => $this->getLang(),
          ]);
     }
     public function search(Request $request)
@@ -72,6 +102,7 @@ class HomeController extends Controller
          
          return view('pages.search',[
             'arResult' => $search,
+            'lang' => $this->getLang(),
          ]);
         }
         else{

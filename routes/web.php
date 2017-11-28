@@ -25,9 +25,11 @@ Route::get('/galery', 'GaleryController@lister');
 Route::get('/galery/{name}', 'GaleryController@inner');
 
 Route::get('/news', 'NewsController@lister');
-Route::get('/news/{name}', 'NewsController@inner');
+Route::get('/news/{name}', 'NewsController@inner')->middleware('lang');
 
 Route::get('/about', 'HomeController@about');
+
+Route::get('/contacts', 'HomeController@contact');
 
 Route::get('/typical/{name}', 'HomeController@typical');
 

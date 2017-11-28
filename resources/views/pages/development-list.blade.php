@@ -1,23 +1,27 @@
 @extends('layouts.template')
 
 
-
-
 @section('title')
-    @if(!empty($SEO))
-    <?= $SEO->content["en"]["title"] ?>
+    @if(!empty($SEO->content[$lang]["title"]))
+    <?= $SEO->content[$lang]["title"] ?>
+    @else
+    Нижний парк
     @endif
 @endsection
 
 @section('description')
-    @if(!empty($SEO))
-    <?= $SEO->content["en"]["description"] ?>
+    @if(!empty($SEO->content[$lang]["description"]))
+    <?= $SEO->content[$lang]["description"] ?>
+    @else
+    Нижний парк
     @endif
 @endsection
 
 @section('keywords')
-    @if(!empty($SEO))
-    <?= $SEO->content["en"]["keywords"] ?>
+    @if(!empty($SEO->content[$lang]["keywords"]))
+    <?= $SEO->content[$lang]["keywords"] ?>
+    @else
+    Нижний парк
     @endif
 @endsection
 
@@ -42,7 +46,7 @@
 	                        <div class="item">
 	                            <div class="img">
 									@if(!empty($value->image))
-	                            	<img src="{{ asset('storage/app/public/') }}/<?= $value->image[0]->path ?><?= $value->image[0]->name ?>.<?= $value->image[0]->extension ?>">
+	                            	<img src="{{ asset('storage/app/public/') }}/<?= $value->image[0]->path ?><?= $value->image[0]->name ?>_high.<?= $value->image[0]->extension ?>">
 	                            	@else
 	                            	<img width="100%" src="http://www.iakr.ru/iTDGh/KorTaxcpwtdhmjO">
 	                            	@endif
@@ -57,9 +61,9 @@
 	                                <div class="text-right">
 	                                    <div class="row">
 	                                        <div class="col-xs-12">
-	                                            <div class="title"><b><a class="#"><?= $value->content['en']["name"] ?></a></b></div>
+	                                            <div class="title"><b><a class="#"><?= $value->content[$lang]["name"] ?></a></b></div>
 	                                            <div class="blackseparator-small"></div>
-	                                            <div class="description"><?= $value->content['en']["body-small"] ?></div>
+	                                            <div class="description"><?= $value->content[$lang]["body-small"] ?></div>
 	                                        </div>
 	                                        <div class="clearfix"></div>
 	                                    </div>

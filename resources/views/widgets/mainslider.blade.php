@@ -9,22 +9,21 @@
                      
                 	@foreach($arResult as $value)
 					 <div class="item active">
-					    <div class="img">
-					        <img src="{{ asset('storage/app/public/') }}/<?= $value['image']['0']->path ?><?= $value['image']['0']->name ?>.<?= $value['image']['0']->extension ?>">
-					    </div>
-					    <div class="center padding-2">
-					        <div class="desc"><?= $value->content['en']["small_text"] ?></div>
-					        <div class="title"><?= $value->content['en']["big_text"] ?></div>
-					        <div class="margin-top-4 all-center"><a class="btn img" href="<?= $value->content['en']["button_link"] ?>"><?= $value->content['en']["button_text"] ?></a></div>
+					    <div class="img" style="background:url('{{ asset('storage/app/public/') }}/<?= $value['image']['0']->path ?><?= $value['image']['0']->name ?>.<?= $value['image']['0']->extension ?>');height:600px;background-position: center;background-repeat: no-repeat;background-size: cover;">
+                        </div>
+					    <div class="center padding-2" style="top:23%;">
+					        <div class="desc"><?= $value->content[$lang]["small_text"] ?></div>
+					        <div class="title"><?= $value->content[$lang]["big_text"] ?></div>
+					        <div class="margin-top-4 all-center"><a class="btn img" href="<?= $value->content[$lang]["button_link"] ?>"><?= $value->content[$lang]["button_text"] ?></a></div>
 					    </div>
 					    <div class="top padding-2 hidden-sm hidden-xs">
-					        <div><?= $value->content['en']["phone_number"] ?></div>
+					        <div><?= $value->content[$lang]["phone_number"] ?></div>
 					        <div>
 					        	<span class="svg-span"><object class="svg-slider" data="{{ asset('img/slider/slider1.svg') }}" type="image/svg+xml"></object></span>
 					        	
 					        	<span class="svg-span"><object class="svg-slider" style="cursor:pointer;" data="{{ asset('img/slider/slider3.svg') }}" type="image/svg+xml"></object></span>
 					        	<div class="svg-after">
-				        		<a href="/typical/contact" class="img slider-btn">Контакты</a>
+				        		<a href="/contacts" class="img slider-btn">Контакты</a>
 					        	</div>
 					        	<div class="svg-after">
                                     <a href="#myModal" class="img slider-btn" data-toggle="modal">Обратная связь</a>
@@ -36,6 +35,15 @@
 					 </div>
 					@endforeach
                 
+                </div>
+                <div class="left-block hidden-xs hidden-sm">
+                    <div class="head">
+                        {{ trans('widgets/allpark.head') }}
+                    </div>
+                    <ul class="body">
+                        <li><a class="img active" href="http://parki48.ru">{{ trans('widgets/allpark.nizhniy') }}</a></li>
+                        <li><a class="img" href="http://skazka.parki48.ru">{{ trans('widgets/allpark.skazka') }}</a></li>
+                        <li><a class="img" href="http://nlmk.parki48.ru">{{ trans('widgets/allpark.nlmk') }}</a></li>
                 </div>
             </div>
         </div>

@@ -2,19 +2,19 @@
 
 @section('title')
     @if(!empty($SEO))
-    <?= $SEO->content["en"]["title"] ?>
+    <?= $SEO->content[$lang]["title"] ?>
     @endif
 @endsection
 
 @section('description')
     @if(!empty($SEO))
-    <?= $SEO->content["en"]["description"] ?>
+    <?= $SEO->content[$lang]["description"] ?>
     @endif
 @endsection
 
 @section('keywords')
     @if(!empty($SEO))
-    <?= $SEO->content["en"]["keywords"] ?>
+    <?= $SEO->content[$lang]["keywords"] ?>
     @endif
 @endsection
 

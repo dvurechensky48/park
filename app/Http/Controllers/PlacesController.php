@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Orchid\CMS\Core\Models\Post;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use App\Comment;
 
 class PlacesController extends Controller
@@ -16,6 +17,25 @@ class PlacesController extends Controller
                 ->where('type','=','page')
                 ->firstOrFail();
         $this->seo = $post;
+    }
+
+    function getLang()
+    {
+        $lang = Session::get('local'); 
+        if(empty($lang))
+        {
+            $lang = 'ru';
+        }
+        if($lang == 'ru')
+        {
+            $this->lang = 'en';
+        }
+        else if($lang == 'en')
+        {
+            $this->lang = 'ru';
+        }
+        
+        return $lang;
     }
 
     public function lister()
@@ -39,6 +59,7 @@ class PlacesController extends Controller
          	'arResult' => $post,
             'url' =>$url,
             'SEO' => $this->seo,
+            'lang' => $this->getLang(),
          ]);
     }
     public function inner(Request $request, $name)
@@ -76,6 +97,7 @@ class PlacesController extends Controller
         return view('pages.development-inner',[
             'arResult' =>$post,
             'url' =>$url,
+            'lang' => $this->getLang(),
          ]);
     }
 

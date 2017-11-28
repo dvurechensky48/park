@@ -1,20 +1,26 @@
 @extends('layouts.template')
 
 @section('title')
-    @if(isset($arResult->content["en"]["title"]))
-    <?= $arResult->content["en"]["title"] ?>
+    @if(!empty($arResult->content[$lang]["description"]))
+    <?= $arResult->content[$lang]["title"] ?>
+    @else
+    Нижний парк
     @endif
 @endsection
 
 @section('description')
-    @if(isset($arResult->content["en"]["description"]))
-    <?= $arResult->content["en"]["description"] ?>
+    @if(!empty($arResult->content[$lang]["description"]))
+    <?= $arResult->content[$lang]["description"] ?>
+    @else
+    Нижний парк
     @endif
 @endsection
 
 @section('keywords')
-    @if(isset($arResult->content["en"]["keywords"]))
-    <?= $arResult->content["en"]["keywords"] ?>
+    @if(!empty($arResult->content[$lang]["description"]))
+    <?= $arResult->content[$lang]["keywords"] ?>
+    @else
+    Нижний парк
     @endif
 @endsection
 

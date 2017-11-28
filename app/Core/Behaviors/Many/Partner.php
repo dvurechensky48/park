@@ -49,8 +49,8 @@ class Partner extends Many
     public function fields() : array
     {
         return [
-            'name'                  => 'tag:input|type:name|name:name|max:100|required|title:Название организации',
-            'link'             => 'tag:input|type:link|name:link|max:100|required|title:Ссылка на сайт партнера',
+            'name'                  => 'tag:input|type:name|name:name|max:100|title:Название организации',
+            'link'             => 'tag:input|type:link|name:link|max:100|title:Ссылка на сайт партнера',
         ];
     }
 

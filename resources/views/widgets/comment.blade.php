@@ -1,6 +1,5 @@
 <div class="comments margin-top-4">
-   
-   <div class="comment_title"><h3><span><a class="color-ser active">Все комментарии</a></span> &nbsp;<span><a class="color-ser">Написать комментарий</a></span></h3></div>
+   <div class="comment_title"><h3><span><a class="color-ser active">{{ trans('widgets/comment.all') }}</a></span> &nbsp;<span><a class="color-ser">{{ trans('widgets/comment.write') }}</a></span></h3></div>
     
     <div class="comment_go active">
     	@if(!empty($arResult) and count($arResult) > 0)
@@ -12,18 +11,18 @@
 		        <div class="clearfix"></div>
 		        <div class="redseparator-small"></div>
 		        <div><?= $value->content ?></div>
-		        <div class="margin-top-2"><a class="color-ser" >Ответить</a></div>
+		        <div class="margin-top-2"><a class="color-ser" >{{ trans('widgets/comment.otv') }}</a></div>
 		    </div>
 			@endforeach
 		@else
-		<div class="margin-top-4">Комментарии отсутвуют</div>
+		<div class="margin-top-4">{{ trans('widgets/comment.comment_no') }}</div>
 		@endif
     </div>
      <div class="comment_go margin-top-4">
     	<form method="get">
-    		<div class="margin-top-2"><input class="form" type="text" name="name" placeholder="Ваше имя"></div>
-    		<div class="margin-top-4"><textarea class="form name_form" type="text" name="content" placeholder="Комментарий"></textarea></div>
-    		<div class="all-right"><input type="submit" class="btn" name="subm"></div>
+    		<div class="margin-top-2"><input class="form" type="text" name="name" placeholder="{{ trans('widgets/comment.name') }}"></div>
+    		<div class="margin-top-4"><textarea class="form name_form" type="text" name="content" placeholder="{{ trans('widgets/comment.comment') }}"></textarea></div>
+    		<div class="all-right"><input type="submit" class="btn" name="subm" value="{{ trans('widgets/comment.send') }}"></div>
     	</form>
     </div>
 

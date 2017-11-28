@@ -3,6 +3,7 @@
 use Orchid\Widget\Service\Widget;
 use Orchid\CMS\Core\Models\Post;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 
 class MainSlider extends Widget {
@@ -25,12 +26,32 @@ class MainSlider extends Widget {
         $this->slider = $slider;
     }
 
+    function getLang()
+    {
+        $lang = Session::get('local'); 
+        if(empty($lang))
+        {
+            $lang = 'ru';
+        }
+        if($lang == 'ru')
+        {
+            $this->lang = 'en';
+        }
+        else if($lang == 'en')
+        {
+            $this->lang = 'ru';
+        }
+        
+        return $lang;
+    }
+
     /**
      * @return mixed
      */
      public function run(){
          return view('widgets.mainslider',[
             'arResult' => $this->slider,
+            'lang' => $this->getLang(),
          ]);
      }
 

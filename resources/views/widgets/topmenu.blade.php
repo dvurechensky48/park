@@ -10,6 +10,7 @@
                 		@else
                 		<li><a class="{{ $value->style }}" href="{{$value->slug}}" title="{{$value->title}}">{{ $value->label }}</a></li>
                 		@endif
+                        
 					@endforeach
                 </ul>
                 <ul class="col-lg-3 all-right">

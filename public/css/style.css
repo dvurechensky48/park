@@ -1092,3 +1092,75 @@ a.slider-btn:hover
 	background: #cc8080;
 	border:2px solid #cc8080;
 }
+
+
+/*
+left block
+*/
+.left-block
+{
+	position: absolute;
+	left:15px;
+	top:50%;
+	margin-top:-60px;
+	background: #344159;
+	z-index: 9999;
+	font-size: 14px;
+	padding: 16px 0;
+	box-shadow: 0px 0px 3px #000;
+}
+.left-block .head
+{
+	position: relative;
+	color: #ffffff;
+	font-weight: 400;
+	line-height: 7.2px;
+	letter-spacing: 0.7px;
+	text-align: center;
+	padding: 0 12px; 
+}
+.left-block .head::after
+{
+	content: "";
+	position: absolute;
+	top:120%;
+	display: block;
+	width:28px;
+	height:2px;
+	left:50%;
+	margin-left:-14px;
+	background-color: #cf8086;
+}
+.left-block .body
+{
+	position: relative;
+	margin-top:15px;
+	text-align: center;
+	padding: 0 0;
+}
+.left-block .body a
+{
+	display: block;
+	width:100%;
+	color: #ffffff !important;
+}
+.left-block .body a.active::before
+{
+	content:"";
+	display: none;
+}
+.left-block .body a:hover
+{
+	text-decoration: underline;
+}
+.left-block .body a.active:hover
+{
+	text-decoration: none;
+}
+.left-block .body a.active
+{
+	background: #cf8086;
+}
+/*
+end left block
+*/

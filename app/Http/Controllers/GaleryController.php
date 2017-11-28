@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Orchid\CMS\Core\Models\Post;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 
 class GaleryController extends Controller
@@ -17,9 +18,28 @@ class GaleryController extends Controller
         $this->seo = $post;
     }
 
+    function getLang()
+    {
+        $lang = Session::get('local'); 
+        if(empty($lang))
+        {
+            $lang = 'ru';
+        }
+        if($lang == 'ru')
+        {
+            $this->lang = 'en';
+        }
+        else if($lang == 'en')
+        {
+            $this->lang = 'ru';
+        }
+        
+        return $lang;
+    }
+
     public function lister()
     {
-    	$post = Post::type('galery')->paginate(9);
+    	$post = Post::type('galery')->latest('created_at')->paginate(9);
     	
         for($i=0;$i<count($post);$i++)
         {
@@ -30,6 +50,7 @@ class GaleryController extends Controller
     	return view('pages.galery-list',[
          	'arResult' =>$post,
             'SEO' => $this->seo,
+            'lang' => $this->getLang(),
          ]);
     }
     public function inner($name)
@@ -43,6 +64,7 @@ class GaleryController extends Controller
 
     	return view('pages.galery-inner',[
          	'arResult' =>$post,
+            'lang' => $this->getLang(),
          ]);
     }
 }

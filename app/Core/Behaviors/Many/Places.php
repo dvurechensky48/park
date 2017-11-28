@@ -49,13 +49,13 @@ class Places extends Many
     public function fields() : array
     {
         return [
-            'name'                  => 'tag:input|type:name|name:name|max:100|required|title:Название места',
-            'body'                  => 'tag:wysiwyg|name:body|max:255|required|rows:10|title:Описание места',
-            'body-small'            => 'tag:textarea|name:body-small|max:255|required|rows:10|title:Краткое описание места',
-            'important'             => 'tag:input|type:important|name:phone_number|max:100|required|title:Важная информация',
-            'title'                 => 'tag:input|type:title|name:title|max:255|required|title:title SEO',
-            'description'           => 'tag:textarea|name:description|max:255|required|rows:5|title:Description SEO',
-            'keywords'              => 'tag:tags|name:keywords|max:255|required|title:keywords SEO',
+            'name'                  => 'tag:input|type:name|name:name|max:100|title:Название места',
+            'body'                  => 'tag:wysiwyg|name:body|max:255|rows:10|title:Описание места',
+            'body-small'            => 'tag:textarea|name:body-small|max:255|rows:10|title:Краткое описание места',
+            'important'             => 'tag:input|type:important|name:phone_number|max:100|title:Важная информация',
+            'title'                 => 'tag:input|type:title|name:title|max:255|title:title SEO',
+            'description'           => 'tag:textarea|name:description|max:255|rows:5|title:Description SEO',
+            'keywords'              => 'tag:tags|name:keywords|max:255|title:keywords SEO',
         ];
     }
 

@@ -49,8 +49,8 @@ class Personal extends Many
     public function fields() : array
     {
         return [
-            'name'        => 'tag:input|type:text|name:name|max:255|required|title:ФИО',
-            'body'        => 'tag:wysiwyg|name:body|max:255|required|rows:10|title:Должность',
+            'name'        => 'tag:input|type:text|name:name|max:255|title:ФИО',
+            'body'        => 'tag:wysiwyg|name:body|max:255|rows:10|title:Должность',
             
         ];
     }

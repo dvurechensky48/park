@@ -12,8 +12,8 @@
 			        <div class="col-xs-8 height-target">
 			            
 			            <div class="fio">
-			                <div class="name">{{ $value->content['en']['name'] }}</div>
-			                <div>{!! $value->content['en']['body'] !!}</div>
+			                <div class="name">{{ $value->content[$lang]['name'] }}</div>
+			                <div>{!! $value->content[$lang]['body'] !!}</div>
 			            </div>
 			            
 			        </div>

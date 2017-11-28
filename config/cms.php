@@ -13,6 +13,7 @@ return [
 
     'single' => [
         App\Core\Behaviors\Single\About::class,
+        App\Core\Behaviors\Single\Contacts::class,
         App\Core\Behaviors\Single\Information::class,
         App\Core\Behaviors\Single\IndexSeo::class,
         App\Core\Behaviors\Single\DevelopmentsSeo::class,

@@ -1,20 +1,26 @@
 @extends('layouts.template')
 
 @section('title')
-    @if(!empty($SEO))
-    <?= $SEO->content["en"]["title"] ?>
+    @if(!empty($SEO->content[$lang]["description"]))
+    <?= $SEO->content[$lang]["title"] ?>
+    @else
+    Нижний парк
     @endif
 @endsection
 
 @section('description')
-    @if(!empty($SEO))
-    <?= $SEO->content["en"]["description"] ?>
+    @if(!empty($SEO->content[$lang]["description"]))
+    <?= $SEO->content[$lang]["description"] ?>
+    @else
+    Нижний парк
     @endif
 @endsection
 
 @section('keywords')
-    @if(!empty($SEO))
-    <?= $SEO->content["en"]["keywords"] ?>
+    @if(!empty($SEO->content[$lang]["description"]))
+    <?= $SEO->content[$lang]["keywords"] ?>
+    @else
+    Нижний парк
     @endif
 @endsection
 
@@ -47,7 +53,7 @@
                                    
                                     @endif
                                     <div class="title">
-                                        <?= $value->content['en']['name'] ?>
+                                        <?= $value->content[$lang]['name'] ?>
                                     </div>
                                     <a href="<?= $_SERVER["REQUEST_URI"] ?>/<?= $value->slug ?>"></a>
                                 </div>

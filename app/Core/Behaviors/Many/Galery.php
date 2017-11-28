@@ -48,10 +48,10 @@ class Galery extends Many
     public function fields() : array
     {
         return [
-            'name'        => 'tag:input|type:text|name:name|max:100|required|title:Название|help:Альбома',
-            'title'                 => 'tag:input|type:title|name:title|max:255|required|title:title SEO',
-            'description'           => 'tag:textarea|name:description|max:255|required|rows:5|title:Description SEO',
-            'keywords'              => 'tag:tags|name:keywords|max:255|required|title:keywords SEO',
+            'name'        => 'tag:input|type:text|name:name|max:100|title:Название|help:Альбома',
+            'title'                 => 'tag:input|type:title|name:title|max:255|title:title SEO',
+            'description'           => 'tag:textarea|name:description|max:255|rows:5|title:Description SEO',
+            'keywords'              => 'tag:tags|name:keywords|max:255|title:keywords SEO',
         ];
     }
 

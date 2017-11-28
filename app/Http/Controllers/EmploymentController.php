@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Orchid\CMS\Core\Models\Post;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 
 class EmploymentController extends Controller
@@ -15,6 +16,25 @@ class EmploymentController extends Controller
                 ->where('type','=','page')
                 ->firstOrFail();
         $this->seo = $post;
+    }
+
+    function getLang()
+    {
+        $lang = Session::get('local'); 
+        if(empty($lang))
+        {
+            $lang = 'ru';
+        }
+        if($lang == 'ru')
+        {
+            $this->lang = 'en';
+        }
+        else if($lang == 'en')
+        {
+            $this->lang = 'ru';
+        }
+        
+        return $lang;
     }
 
     public function lister()
@@ -39,6 +59,7 @@ class EmploymentController extends Controller
     	return view('pages.employment-list',[
          	'arResult' =>$post,
             'SEO' =>$this->seo,
+            'lang' => $this->getLang(),
          ]);
     }
 
@@ -62,6 +83,7 @@ class EmploymentController extends Controller
         return view('pages.employment-inner',[
             'arResult' =>$post,
             'SEO' => $this->getSeo($name),
+            'lang' => $this->getLang(),
          ]);
     }
 
@@ -76,6 +98,7 @@ class EmploymentController extends Controller
         
         return view('pages.employment-view',[
             'arResult' =>$post,
+            'lang' => $this->getLang(),
          ]);  
     }
 }

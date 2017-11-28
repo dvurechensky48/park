@@ -50,8 +50,8 @@ class Information extends Single
     public function fields() : array
     {
         return [
-            'name'        => 'tag:input|type:text|name:name|max:255|required|title:Заголовок',
-            'body'        => 'tag:wysiwyg|name:body|max:255|required|rows:10|title:Тело страницы',
+            'name'        => 'tag:input|type:text|name:name|max:255|title:Заголовок',
+            'body'        => 'tag:wysiwyg|name:body|max:255|rows:10|title:Тело страницы',
         ];
     }
 

@@ -48,11 +48,11 @@ class MainSlider extends Many
     public function fields() : array
     {
         return [
-            'phone_number'        => 'tag:input|type:text|name:phone_number|max:100|required|title:Номер телефона|help:На слайдере',
-            'small_text'          => 'tag:input|type:text|name:small_text|max:255|required|title:Мелкий текст|help:На слайдере',
-            'big_text'            => 'tag:input|type:text|name:big_text|max:255|required|title:Крупный текст|help:На слайдере',
-            'button_text'         => 'tag:input|type:text|name:button_text|max:255|required|title:Текст в кнопке|help:На слайдере',
-            'button_link'         => 'tag:input|type:text|name:button_link|max:255|required|title:Ссылка|help:На слайдере',
+            'phone_number'        => 'tag:input|type:text|name:phone_number|max:100|title:Номер телефона|help:На слайдере',
+            'small_text'          => 'tag:input|type:text|name:small_text|max:255|title:Мелкий текст|help:На слайдере',
+            'big_text'            => 'tag:input|type:text|name:big_text|max:255|title:Крупный текст|help:На слайдере',
+            'button_text'         => 'tag:input|type:text|name:button_text|max:255|title:Текст в кнопке|help:На слайдере',
+            'button_link'         => 'tag:input|type:text|name:button_link|max:255|title:Ссылка|help:На слайдере',
         ];
     }
 

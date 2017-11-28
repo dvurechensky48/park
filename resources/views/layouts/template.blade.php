@@ -14,6 +14,7 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/mobile-menu.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main-page.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
     <!-- Основной файл стилей -->
     <link rel="stylesheet" href="{{ asset('owl-carousel/owl.carousel.css') }}">
     <!-- Тема по умолчанию -->
