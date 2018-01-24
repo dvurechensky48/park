@@ -83,5 +83,4 @@
 
        
     </script>
-    @widget('Footer')
 @endsection 

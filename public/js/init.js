@@ -16,6 +16,7 @@
 });
   
 
-
+  
+  
   alignment2(document.querySelectorAll('.height-object'),document.querySelectorAll('.height-target'));
   autoMargin(document.querySelectorAll('.fio'),'relative');

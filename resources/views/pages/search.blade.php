@@ -27,5 +27,4 @@
 	
 	
 	@widget('DevelopmentsFooter')
-	@widget('Footer')
 @endsection 

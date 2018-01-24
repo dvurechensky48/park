@@ -33,5 +33,6 @@ return [
         'Personal' => App\Http\Widgets\Mainpage\Personal::class,
         'Modal' => App\Http\Widgets\Modal::class,
         'AllPark' => App\Http\Widgets\AllPark::class,
+        'Advertising' => App\Http\Widgets\Mainpage\Advertising::class,
     ],
 ];

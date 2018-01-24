@@ -84,11 +84,11 @@
             <div class="clearfix"></div>
     </div>
 
+    @widget('Advertising')
 
     <!-- end content -->
      
                     
     @widget('Modal')
-    @widget('Footer')	
-
+  
 @endsection

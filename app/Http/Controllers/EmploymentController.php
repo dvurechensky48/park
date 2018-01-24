@@ -39,7 +39,7 @@ class EmploymentController extends Controller
 
     public function lister()
     {
-    	$post = Post::type('employment')->get();
+    	$post = Post::type('employment')->whereDate('created_at','<' ,'2017-12-01 15:05:33')->latest()->get();
     	for($i=0;$i<count($post);$i++)
         {
             $img = DB::select('select * from attachments where post_id = ?',[$post[$i]->id]);

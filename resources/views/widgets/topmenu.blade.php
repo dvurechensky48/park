@@ -6,9 +6,9 @@
                 <ul class="col-lg-9">
                 	@foreach($arResult as $value)
                 		@if($value->slug == "/".$url[0])
-                		<li><a class="active {{ $value->style }}" href="{{$value->slug}}" title="{{$value->title}}">{{ $value->label }}</a></li>
+                		<li><a class="menu-link active {{ $value->style }}" href="{{$value->slug}}" title="{{$value->title}}">{{ $value->label }}</a></li>
                 		@else
-                		<li><a class="{{ $value->style }}" href="{{$value->slug}}" title="{{$value->title}}">{{ $value->label }}</a></li>
+                		<li><a class="menu-link {{ $value->style }}" href="{{$value->slug}}" title="{{$value->title}}">{{ $value->label }}</a></li>
                 		@endif
                         
 					@endforeach

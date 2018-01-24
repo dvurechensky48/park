@@ -15,7 +15,7 @@ class DevelopmentsSlidebar extends Widget {
         $url = $_SERVER["REQUEST_URI"];
         $url = explode('/', $url);
 
-        $post = Post::type($url[1])->take(5)->get();
+        $post = Post::type($url[1])->whereDate('created_at','<' ,'2017-12-01 15:05:33')->latest()->take(5)->get();
         for($i=0;$i<count($post);$i++)
         {
             $img = DB::select('select * from attachments where post_id = ?',[$post[$i]->id]);

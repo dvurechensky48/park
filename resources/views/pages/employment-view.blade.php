@@ -71,5 +71,4 @@
 
 <!-- end content -->
 
-	@widget('Footer')
 @endsection

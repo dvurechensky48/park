@@ -48,6 +48,7 @@ return [
         App\Core\Behaviors\Many\EmploymentEksk::class,
         App\Core\Behaviors\Many\EmploymentKwest::class,
         App\Core\Behaviors\Many\Personal::class,
+        App\Core\Behaviors\Many\Advertisings::class,
     ],
 
     /*

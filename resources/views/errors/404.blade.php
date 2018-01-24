@@ -51,5 +51,6 @@
 	    </section>
 
 	
-	@widget('Footer')
+
+
 @endsection

@@ -39,7 +39,7 @@ class GaleryController extends Controller
 
     public function lister()
     {
-    	$post = Post::type('galery')->latest('created_at')->paginate(9);
+    	$post = Post::type('galery')->whereDate('created_at','<' ,'2017-12-01 15:05:33')->latest()->paginate(9);
     	
         for($i=0;$i<count($post);$i++)
         {

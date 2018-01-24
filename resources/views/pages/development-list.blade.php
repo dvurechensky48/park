@@ -39,8 +39,8 @@
                    @if(!empty($arResult))
                    	@foreach($arResult as $value)
                    		<?php 
-                   			$date = explode(' ', $value['publish_at']) ;
-                   			
+                   			$date = explode(' ', $value['created_at']) ;
+                   			$date = explode('-', $date[0]) ;
                    		 ?>
 	                   	<div class="col-sm-4 margin-top-2">
 	                        <div class="item">
@@ -53,8 +53,7 @@
 	                            	<div class="text-left">
 	                                    <div class="row">
 	                                        <div class="col-xs-12 color-white">
-	                                            <div class="date all-center"><?= $date[0] ?></div>
-	                                            <div class="big-date all-center"><b><?= $date[1] ?></b></div>
+	                                            <div class="date all-center"><?= $date[2] ?>.<?= $date[1] ?>.<?= $date[0] ?></div>
 	                                        </div>
 	                                    </div>
 	                                </div>
@@ -90,5 +89,4 @@
 
     <!-- end content -->
 
-	@widget('Footer')
 @endsection

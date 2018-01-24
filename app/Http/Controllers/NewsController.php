@@ -49,7 +49,7 @@ class NewsController extends Controller
             $url_str = explode('?', $url_str);
             $url[$k] = $url_str[0];
         }
-    	$post = Post::type('news')->paginate(9);
+    	$post = Post::type('news')->whereDate('created_at','<' ,'2017-12-01 15:05:33')->latest()->paginate(9);
     	for($i=0;$i<count($post);$i++)
         {
             $img = DB::select('select * from attachments where post_id = ? limit 1',[$post[$i]->id]);

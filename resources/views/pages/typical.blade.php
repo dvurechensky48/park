@@ -32,5 +32,5 @@
 
 	@endif
 	
-	@widget('Footer')
+	
 @endsection

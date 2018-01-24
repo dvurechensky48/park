@@ -75,10 +75,14 @@
 
                 <div class="col-md-8" id="height-object">
                     <div class="content">
-                        
+                        <?php
+                            $date = explode(' ', $arResult->created_at);
+                            $clock = $date[1];
+                            $date = explode('-', $date[0]);
+                        ?>
                         @if(!empty($arResult))
                             <h2><?= $arResult->content[$lang]['name'] ?></h2>
-                            <div class="date"><?= $arResult->publish_at ?></div>
+                            <div class="date">Опубликовано: <?= $date[2] ?>.<?= $date[1] ?>.<?= $date[0] ?> <?= $clock ?></div>
                             <div class="margin-top-2">
                                 <p><?= $arResult->content[$lang]['body'] ?></p>
                                 @if(count($arResult->image > 0))
@@ -135,5 +139,4 @@
        
     </script>
 
-	@widget('Footer')
 @endsection
