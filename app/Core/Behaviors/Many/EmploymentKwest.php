@@ -29,7 +29,7 @@ class EmploymentKwest extends Many
      *
      * @var string
      */
-    public $slugFields = 'title';
+    public $slugFields = 'name';
 
     /**
      * Rules Validation.

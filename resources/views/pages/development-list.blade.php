@@ -45,7 +45,7 @@
 	                   	<div class="col-sm-4 margin-top-2">
 	                        <div class="item">
 	                            <div class="img">
-									@if(!empty($value->image))
+									     @if(!empty($value->image))
 	                            	<img src="{{ asset('storage/app/public/') }}/<?= $value->image[0]->path ?><?= $value->image[0]->name ?>_high.<?= $value->image[0]->extension ?>">
 	                            	@else
 	                            	<img width="100%" src="http://www.iakr.ru/iTDGh/KorTaxcpwtdhmjO">

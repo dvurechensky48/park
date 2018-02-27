@@ -1,36 +1,28 @@
 <?php
-
 namespace App\Core\Behaviors\Many;
-
 use Orchid\CMS\Behaviors\Many;
 use Orchid\CMS\Http\Forms\Posts\BasePostForm;
 use Orchid\CMS\Http\Forms\Posts\UploadPostForm;
-
-
 class Typical extends Many
 {
     /**
      * @var string
      */
     public $name = 'Типовая страница';
-
     /**
      * @var string
      */
     public $description = 'Создание страниц для слайдера, информационных страниц и т.д. Путь к страницы /typical';
-
     /**
      * @var string
      */
     public $slug = 'typical';
-
     /**
      * Slug url /news/{name}.
      *
      * @var string
      */
     public $slugFields = 'title';
-
     /**
      * Rules Validation.
      *
@@ -42,7 +34,6 @@ class Typical extends Many
             'id'          => 'sometimes|integer|unique:posts',
         ];
     }
-
     /**
      * @return array
      */
@@ -56,7 +47,6 @@ class Typical extends Many
             'keywords'    => 'tag:tags|name:keywords|max:255|title:Keywords SEO',
         ];
     }
-
     /**
      * @return array
      */
@@ -68,7 +58,6 @@ class Typical extends Many
             
         ];
     }
-
     /**
      * Grid View for post type.
      */

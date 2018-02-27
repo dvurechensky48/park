@@ -3,6 +3,7 @@
 use Orchid\Widget\Service\Widget;
 use Orchid\CMS\Core\Models\Post;
 use Illuminate\Support\Facades\Session;
+use Carbon\Carbon;
 
 class News extends Widget {
 
@@ -13,6 +14,7 @@ class News extends Widget {
     public function __construct(){
         $post = Post::published()->where('type', 'news')
                 ->orderBy('publish_at', 'DESC')
+                ->whereDate('created_at','<=' ,Carbon::today())
                 ->limit(4)
                 ->get();
         $this->post = $post;

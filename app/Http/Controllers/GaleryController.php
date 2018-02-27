@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Orchid\CMS\Core\Models\Post;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class GaleryController extends Controller
 {
@@ -39,7 +40,7 @@ class GaleryController extends Controller
 
     public function lister()
     {
-    	$post = Post::type('galery')->whereDate('created_at','<' ,'2017-12-01 15:05:33')->latest()->paginate(9);
+    	$post = Post::type('galery')->whereDate('created_at','<=' ,Carbon::today())->latest()->paginate(9);
     	
         for($i=0;$i<count($post);$i++)
         {

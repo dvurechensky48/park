@@ -25,10 +25,7 @@
 
 @section('assets')
 <script src="{{ asset('gal/unitegallery/js/jquery-11.0.min.js') }}"></script>
-<script src="{{ asset('gal/unitegallery/js/unitegallery.min.js') }}"></script>
-<link rel="stylesheet" href="{{ asset('gal/unitegallery/css/unite-gallery.css') }}">
-<script src="{{ asset('gal/unitegallery/themes/default/ug-theme-default.js') }}"></script>
-<link rel="stylesheet" href="{{ asset('gal/unitegallery/themes/default/ug-theme-default.css') }}"> 
+
 @endsection
 
 @section('content')
@@ -86,12 +83,11 @@
                             <div class="margin-top-2">
                                 <p><?= $arResult->content[$lang]['body'] ?></p>
                                 @if(count($arResult->image > 0))
-                                    <div id="gallery" style="display:none;">
+                                    <div>
                                          @if(!empty($arResult))
                                             @foreach($arResult->image as $value)
-                                               <img class="lazyload"  alt="Preview Image 1"
-                                                 src="{{ asset('img/1.png') }}"
-                                                 data-src="{{ asset('storage/app/public/') }}/<?= $value->path ?><?= $value->name ?>.<?= $value->extension ?>"
+                                               <img style="margin-bottom: 15px;" width="100%" alt="Preview Image 1"
+                                                 src="{{ asset('storage/app/public/') }}/<?= $value->path ?><?= $value->name ?>.<?= $value->extension ?>"
                                                  data-image="{{ asset('storage/app/public/') }}/<?= $value->path ?><?= $value->name ?>.<?= $value->extension ?>""
                                                  data-description="Нижний парк">
                                             @endforeach
@@ -124,17 +120,7 @@
     </section>
     <!-- end content -->
     <script type="text/javascript">
-        window.addEventListener("load", function(event) {
-        lazyload();
-        jQuery("#gallery").unitegallery({
-                theme_enable_text_panel: false,
-
-            });
-        $(".lazyload").each(function(event) { 
-            $(".lazyload")[event].attr("data-image", $(".lazyload").attr("src")[event]);
-        });
-
-         });
+        
 
        
     </script>

@@ -29,7 +29,7 @@ class Developments extends Many
      *
      * @var string
      */
-    public $slugFields = 'title';
+    public $slugFields = 'name';
 
     /**
      * Rules Validation.
@@ -49,7 +49,7 @@ class Developments extends Many
     public function fields() : array
     {
         return [
-            'name'                  => 'tag:input|type:name|name:name|max:100|title:Название события',
+            'name'                  => 'tag:input|type:name|name:name|max:100|required|title:Название события',
             'body'                  => 'tag:wysiwyg|name:body|max:255|rows:10|title:Описание события',
             'body-small'            => 'tag:textarea|name:body-small|max:255|rows:10|title:Короткое описание события',
             'important'             => 'tag:input|type:important|name:phone_number|max:100|title:Важная информация',

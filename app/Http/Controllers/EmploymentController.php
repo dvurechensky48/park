@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Orchid\CMS\Core\Models\Post;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class EmploymentController extends Controller
 {
@@ -39,7 +40,7 @@ class EmploymentController extends Controller
 
     public function lister()
     {
-    	$post = Post::type('employment')->whereDate('created_at','<' ,'2017-12-01 15:05:33')->latest()->get();
+    	$post = Post::type('employment')->whereDate('created_at','<=' ,Carbon::today())->latest()->get();
     	for($i=0;$i<count($post);$i++)
         {
             $img = DB::select('select * from attachments where post_id = ?',[$post[$i]->id]);
